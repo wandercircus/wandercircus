@@ -36,6 +36,6 @@ function handleCurrentShow(data) {
 
 $(document).ready(function() {
     loadSkripts();
-    var socket = io.connect('http://localhost');
+    var socket = io.connect('/');
     socket.on('current show', handleCurrentShow);
 });
