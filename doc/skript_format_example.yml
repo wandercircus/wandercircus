@@ -7,6 +7,7 @@ setup:
   irc:
     server: irc.freenode.com
     channel: nodespeare
+
 skript:
   - action: enter
     actor: johan

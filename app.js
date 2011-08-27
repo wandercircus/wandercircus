@@ -2,6 +2,7 @@ var args = process.argv.slice(2),
     express = require('express'),
     app = express.createServer(),
     config = require('./config.js'),
+    currentShow = require('./lib/show.js');
     skripts = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
 
 
@@ -23,8 +24,22 @@ app.configure('production', function() {
 });
 
 app.get('/', function(req, res) {
-     res.send(JSON.stringify(skripts));
+  this.sendfile(path.join(express.static(), 'index.html'));
+     //res.send(JSON.stringify(skripts));
 });
+
+app.get('/api/theatres', function(req, res) {
+  res.send(JSON.stringify(theaters));
+});
+
+app.get('/api/skripts', function(req, res) {
+  res.send(JSON.stringify(skripts));
+});
+
+app.get('/api/show', function(req, res) {
+  res.send(JSON.stringify);
+});
+
 
 app.listen(config.port, config.host);
 
@@ -37,4 +52,6 @@ var theater = theaters.irc.getTheater();
 var skript = skripts[0];
 theater.setup(skript.setup, function(){
     theater.run(skript.skript);
+    currentShow.update("running", theater, skript, "http://example.com");
 });
+
