@@ -12,16 +12,20 @@ skript:
     actors: 
         - johan
         - martin
-  - actor: martin
+  - action: speak
+    actor: martin
     line: There shall be blood!
-  - actor: johan
+  - action: speak
+    actor: johan
     line: Me no likey
-  - actor: martin
+  - action: speak
+    actor: martin
     line: Okay - There shall be code
   - action: exit
     actors: 
         - martin
-  - actor: johan
+  - action: speak
+    actor: johan
     line: Im alone
   - action: exit
     actors: 
