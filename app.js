@@ -40,9 +40,9 @@ app.get('/api/skripts', function(req, res) {
 });
 
 app.post('/api/start/:id', function(req, res) {
-  //currentShow.startShow(theaters.irc.getTheater(), skripts[req.params.id], function() {
-    //io.sockets.emit('current show', currentShow.toJSON());
-  //});
+  currentShow.startShow(theaters.irc.getTheater(), skripts[req.params.id], function() {
+    io.sockets.emit('current show', currentShow.toJSON());
+  });
   res.send("");
 });
 
