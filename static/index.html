@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
 
 	<title>Wanderzirkus</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
 	</header>
 	<div id="main" role="main">
 	  <h2>Available Plays</h2>
-	  <ul id="playlist">
+	  <ul id="skript-list">
 	  </ul>
 	</div>
 	<footer>
@@ -22,6 +22,16 @@
 	</footer>
 </div> <!--! end of #container -->
 
+<div id="templates" class="template-container">
+  <li class="skript">
+    <span class="title"></span>
+    <span class="author"></span>
+    <a class="start-link">Start Play</a>
+  </li>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="/scripts/script.js"></script>
 <script>
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

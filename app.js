@@ -38,7 +38,7 @@ app.get('/api/show', function(req, res) {
   res.send(JSON.stringify(currentShow));
 });
 
-app.get('/*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendfile(path.join(__dirname, 'static', 'index.html'));
 });
 
