@@ -207,9 +207,9 @@ jsdom.env({
           author: "Shakespeare",
           irc: {
             server: "irc.mysociety.org",
-            channel: "#nodespeare"
-          },
-          prefix: "hamlet|"
+            channel: "#nodespeare",
+            prefix: "hamlet|"
+          }
         },
         skript: skript
     };

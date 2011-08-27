@@ -7,9 +7,9 @@ setup:
     - id: johan
       name: Johan Ohne Land
   irc:
-    server: irc.mysociety.org
     channel: "#nodespeare"
-  prefix: "max]"
+    prefix: "max]"
+    server: irc.mysociety.org
 skript:
   - action: announcement
     content: "An announcement!"

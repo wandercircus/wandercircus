@@ -1,0 +1,162 @@
+--- 
+author: Monthy Python
+title: The Dead Parot
+setup: 
+  actors: 
+  - id: MrPraline
+    name: Mr. Praline
+  - id: Owner
+    name: Shop Owner
+  irc: 
+    channel: "#petshop"
+    prefix: mpdp|
+    server: irc.mysociety.org
+skript: 
+- action: enter
+  actors: 
+  - Owner
+  - MrPraline
+- action: speak
+  actor: MrPraline
+  line: "'Ello, I wish to register a complaint."
+- action: perform
+  actor: Owner
+  what: does not respond.
+- action: speak
+  actor: MrPraline
+  line: "'Ello, Miss?"
+- action: speak
+  actor: Owner
+  line: What do you mean "miss"?
+- action: speak
+  actor: MrPraline
+  line: I'm sorry, I have a cold. I wish to make a complaint!
+- action: speak
+  actor: Owner
+  line: We're closin' for lunch.
+- action: speak
+  actor: MrPraline
+  line: Never mind that, my lad. I wish to complain about this parrot what I purchased not half an hour ago from this very boutique.
+- action: speak
+  actor: Owner
+  line: Oh yes, the, uh, the Norwegian Blue...What's,uh...What's wrong with it?
+- action: speak
+  actor: MrPraline
+  line: I'll tell you what's wrong with it, my lad. 'E's dead, that's what's wrong with it!
+- action: speak
+  actor: Owner
+  line: No, no, 'e's uh,...he's resting.
+- action: speak
+  actor: MrPraline
+  line: Look, matey, I know a dead parrot when I see one, and I'm looking at one right now.
+- action: speak
+  actor: Owner
+  line: No no he's not dead, he's, he's restin'! Remarkable bird, the Norwegian Blue, idn'it, ay? Beautiful plumage!
+- action: speak
+  actor: MrPraline
+  line: The plumage don't enter into it. It's stone dead.
+- action: speak
+  actor: Owner
+  line: Nononono, no, no! 'E's resting!
+- action: speak
+  actor: MrPraline
+  line: All right then, if he's restin', I'll wake him up! (shouting at the cage) 'Ello, Mister Polly Parrot! I've got a lovely fresh cuttle fish for you if you show...
+- action: perform
+  actor: Owner
+  what: hits the cage
+- action: speak
+  actor: Owner
+  line: There, he moved!
+- action: speak
+  actor: MrPraline
+  line: No, he didn't, that was you hitting the cage!
+- action: speak
+  actor: Owner
+  line: I never!!
+- action: speak
+  actor: MrPraline
+  line: Yes, you did!
+- action: speak
+  actor: Owner
+  line: I never, never did anything...
+- action: speak
+  actor: MrPraline
+  line: (yelling and hitting the cage repeatedly) 'ELLO POLLY!!!!! Testing! Testing! Testing! Testing! This is your nine o'clock alarm call!
+- action: perform
+  actor: MrPraline
+  what: Takes parrot out of the cage and thumps its head on the counter. Throws it up in the air and watches it plummet to the floor.
+- action: speak
+  actor: MrPraline
+  line: Now that's what I call a dead parrot.
+- action: speak
+  actor: Owner
+  line: No, no.....No, 'e's stunned!
+- action: speak
+  actor: MrPraline
+  line: STUNNED?!?
+- action: speak
+  actor: Owner
+  line: Yeah! You stunned him, just as he was wakin' up! Norwegian Blues stun easily, major.
+- action: speak
+  actor: MrPraline
+  line: Um...now look...now look, mate, I've definitely 'ad enough of this. That parrot is definitely deceased, and when I purchased it not 'alf an hour ago, you assured me that its total lack of movement was due to it bein' tired and shagged out following a prolonged squawk.
+- action: speak
+  actor: Owner
+  line: Well, he's...he's, ah...probably pining for the fjords.
+- action: speak
+  actor: MrPraline
+  line: PININ' for the FJORDS?!?!?!? What kind of talk is that?, look, why did he fall flat on his back the moment I got 'im home?
+- action: speak
+  actor: Owner
+  line: The Norwegian Blue prefers keepin' on it's back! Remarkable bird, id'nit, squire? Lovely plumage!
+- action: speak
+  actor: MrPraline
+  line: Look, I took the liberty of examining that parrot when I got it home, and I discovered the only reason that it had been sitting on its perch in the first place was that it had been NAILED there.
+- action: speak
+  actor: Owner
+  line: Well, o'course it was nailed there! If I hadn't nailed that bird down, it would have nuzzled up to those bars, bent 'em apart with its beak, and VOOM! Feeweeweewee!
+- action: speak
+  actor: MrPraline
+  line: "\"VOOM\"?!? Mate, this bird wouldn't \"voom\" if you put four million volts through it! 'E's bleedin' demised!"
+- action: speak
+  actor: Owner
+  line: No no! 'E's pining!
+- action: speak
+  actor: MrPraline
+  line: "'E's not pinin'! 'E's passed on! This parrot is no more! He has ceased to be! 'E's expired and gone to meet 'is maker! 'E's a stiff! Bereft of life, 'e rests in peace! If you hadn't nailed 'im to the perch 'e'd be pushing up the daisies! 'Is metabolic processes are now 'istory! 'E's off the twig! 'E's kicked the bucket, 'e's shuffled off 'is mortal coil, run down the curtain and joined the bleedin' choir invisibile!! THIS IS AN EX-PARROT!!"
+- action: speak
+  actor: Owner
+  line: Well, I'd better replace it, then. (he takes a quick peek behind the counter) Sorry squire, I've had a look 'round the back of the shop, and uh, we're right out of parrots.
+- action: speak
+  actor: MrPraline
+  line: I see. I see, I get the picture.
+- action: speak
+  actor: Owner
+  line: I got a slug.
+- action: speak
+  actor: MrPraline
+  line: Pray, does it talk?
+- action: speak
+  actor: Owner
+  line: Nnnnot really.
+- action: speak
+  actor: MrPraline
+  line: WELL IT'S HARDLY A BLOODY REPLACEMENT, IS IT?!!???!!?
+- action: speak
+  actor: Owner
+  line: N-no, I guess not.
+- action: perform
+  actor: Owner
+  what: gets ashamed, looks at his feet
+- action: speak
+  actor: MrPraline
+  line: Well.
+- action: speak
+  actor: Owner
+  line: (quietly) D'you.... d'you want to come back to my place?
+- action: perform
+  actor: MrPraline
+  what: looks around
+- action: speak
+  actor: MrPraline
+  line: Yeah, all right, sure.

@@ -4,9 +4,9 @@
  "setup": {
   "irc": {
    "server": "irc.mysociety.org",
-   "channel": "#nodespeare"
+   "channel": "#nodespeare",
+   "prefix": "hamlet|"
   },
-  "prefix": "hamlet|",
   "actors": [
    {
     "id": "KingClaudius",
