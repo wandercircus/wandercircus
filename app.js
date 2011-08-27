@@ -47,19 +47,23 @@ app.post('/api/vote/:id', function(req, res) {
         res.send(404);
         return;
     }
-    var cookieString = req.headers.cookie || "";
-    var parsedCookies = connect.utils.parseCookie(cookieString);
-    var voteId = parsedCookies['vote_id'];
+    var voteId = getVoteId(req);
     if (voteId) {
         res.send(403);
         return;
     } 
     votes[req.params.id] += 1;
     io.sockets.emit('votes', votes);
-    res.header('Set-Cookie', 'vote_id=' + req.params.id);
+    res.cookie('vote_id', req.params.id, { });
     io.sockets.emit('current show', currentShow.toJSON());
     res.send(200);
 });
+
+function getVoteId(request) {
+    var cookieString = (request && request.headers.cookie) || "";
+    var parsedCookies = connect.utils.parseCookie(cookieString);
+    return parsedCookies['vote_id'];
+}
 
 app.get('/', function(req, res) {
   res.sendfile(path.join(__dirname, 'static', 'index.html'));
@@ -70,7 +74,9 @@ app.listen(config.port, config.host);
 io.sockets.on('connection', function(socket) {
     socket.emit('current show', currentShow.toJSON());
     socket.emit('skripts', skripts);
-
+    var voteId = getVoteId(socket.request);
+    if (voteId)
+        socket.emit('my vote', voteId);
 });
 
 if (args.length > 0){

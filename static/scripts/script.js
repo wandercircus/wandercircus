@@ -20,8 +20,12 @@ function showSkript(skript) {
 
 function castVote(id) {
     jQuery.post('/api/vote/' + id, function(res) {
-        $('#skript-' + id).addClass('voted-for');
+        highlightVote(id);
     });
+}
+
+function highlightVote(id) {
+    $('#skript-' + id).addClass('voted-for');
 }
 
 function handleCurrentShow(data) {
@@ -45,5 +49,8 @@ $(document).ready(function() {
     document.socket.on('current show', handleCurrentShow);
     document.socket.on('votes', function(data) {
       console.log('received a vote ', data.toString());
+    });
+    document.socket.on('my vote', function(id) {
+        highlightVote(id);
     });
 });
