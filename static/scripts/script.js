@@ -22,5 +22,10 @@ function startSkript(id) {
 }
 
 $(document).ready(function() {
-        loadSkripts();
+    loadSkripts();
+    var socket = io.connect('http://localhost');
+    socket.on('current show', function (data) {
+      console.log(data);
+      //socket.emit('my other event', { my: 'data' });
+    });
 });

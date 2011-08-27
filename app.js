@@ -1,12 +1,13 @@
 var path    = require('path'),
-    express = require('express');
+    express = require('express'),
+    app     = express.createServer(),
+    io      = require('socket.io').listen(app);
 
 var config      = require('./config.js'),
     currentShow = require('./lib/show.js'),
     skripts     = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
 
-var app = express.createServer(),
-    args = process.argv.slice(2);
+var args = process.argv.slice(2);
 
 app.configure(function(){
     app.use(express.methodOverride());
@@ -39,7 +40,9 @@ app.get('/api/show', function(req, res) {
 });
 
 app.post('/api/start/:id', function(req, res) {
-  currentShow.startShow(theaters.irc.getTheater(), skripts[req.params.id]);
+  currentShow.startShow(theaters.irc.getTheater(), skripts[req.params.id], function() {
+    io.sockets.emit('current show', currentShow.toJSON());
+  });
   res.send("");
 });
 
