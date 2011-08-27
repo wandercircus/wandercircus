@@ -52,6 +52,10 @@ app.get('/', function(req, res) {
 
 app.listen(config.port, config.host);
 
+io.sockets.on('connection', function(socket) {
+    socket.emit('current show', currentShow.toJSON()); 
+});
+
 var theaters = {
     irc: require('./lib/irctheater.js')
 };
