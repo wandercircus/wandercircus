@@ -40,7 +40,6 @@ app.get('/api/show', function(req, res) {
 
 app.get('/*', function(req, res) {
   res.sendfile(path.join(__dirname, 'static', 'index.html'));
-     //res.send(JSON.stringify(skripts));
 });
 
 app.listen(config.port, config.host);
@@ -53,7 +52,7 @@ var theater = theaters.irc.getTheater();
 
 var skript = skripts[0];
 theater.setup(skript.setup, function(){
-    //theater.run(skript.skript);
+    theater.run(skript.skript);
     currentShow.update("running", theater, skript, "http://example.com");
 });
 
