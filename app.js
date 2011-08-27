@@ -39,10 +39,6 @@ app.get('/api/skripts', function(req, res) {
   res.send(JSON.stringify(skripts));
 });
 
-app.get('/api/show', function(req, res) {
-  res.send(JSON.stringify(currentShow));
-});
-
 app.post('/api/start/:id', function(req, res) {
   currentShow.startShow(theaters.irc.getTheater(), skripts[req.params.id], function() {
     io.sockets.emit('current show', currentShow.toJSON());

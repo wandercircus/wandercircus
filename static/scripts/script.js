@@ -21,11 +21,21 @@ function startSkript(id) {
     $.post('/api/start/' + id);
 }
 
+function handleCurrentShow(data) {
+    console.log(data);
+    var currentShow = JSON.parse(data);
+
+    if (currentShow.status == 'running') {
+      $('.current-show')
+        .find('.name').html(currentShow.skript.title).end()
+        .removeClass('stopped').addClass('running');
+    } else {
+      $('.current-show').removeClass('running').addClass('stopped');
+    }
+}
+
 $(document).ready(function() {
     loadSkripts();
     var socket = io.connect('http://localhost');
-    socket.on('current show', function (data) {
-      console.log(data);
-      //socket.emit('my other event', { my: 'data' });
-    });
+    socket.on('current show', handleCurrentShow);
 });
