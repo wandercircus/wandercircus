@@ -47,8 +47,13 @@ $(document).ready(function() {
       loadSkripts(skripts);
     });
     document.socket.on('current show', handleCurrentShow);
-    document.socket.on('votes', function(data) {
-      console.log('received a vote ', data.toString());
+    document.socket.on('votes', function(votes) {
+        $.each(votes, function(id, vote) {
+            var skript = $('#skript-' + vote.id);
+            console.log(skript);
+            skript.find('.vote-number').html(vote.votes);
+            skript.find('.vote-bar').css('width', (500 * vote.votePercentage) + 'px');
+        });
     });
     document.socket.on('my vote', function(id) {
         highlightVote(id);
