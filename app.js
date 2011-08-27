@@ -6,6 +6,7 @@ var path    = require('path'),
 var config      = require('./config.js'),
     currentShow = require('./lib/show.js'),
     skripts     = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
+    votes       = {};
 
 var args = process.argv.slice(2);
 
@@ -53,17 +54,13 @@ app.listen(config.port, config.host);
 
 io.sockets.on('connection', function(socket) {
     socket.emit('current show', currentShow.toJSON());
-    socket.emit('skripts', JSON.stringify(skripts));
-});
-
-io.sockets.on('vote', function(id) {
-    console.log("vote: " + id);
-
-    if (skripts[id]) {
-      skripts[id] =+ 1;
-    }
-
-    io.sockets.emit('skripts', JSON.stringify(skripts));
+    socket.emit('skripts', skripts);
+    socket.on('vote', function(id) {
+        if (skripts[id]) {
+          votes[id] += 1;
+          io.sockets.emit('vote', votes);
+        }
+    });
 });
 
 if (args.length > 0){
