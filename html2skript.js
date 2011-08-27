@@ -121,7 +121,7 @@ jsdom.env({
             if(text.indexOf('[') === 0){
                 text = text.split("\n").join(" ");
                 text = text.slice(1, text.length - 1);
-                if (text.indexOf("Enter") !== -1){
+                if (text.toLowerCase().indexOf("enter") !== -1){
                     skript.push({
                         action: "announcement",
                         content: text
