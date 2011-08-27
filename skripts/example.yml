@@ -6,19 +6,23 @@ setup:
       name: Johan Ohne Land
   irc:
     server: irc.freenode.com
-    channel: nodespeare
+    channel: "#nodespeare"
 skript:
   - action: enter
-    actor: johan
-  - action: enter
-    actor: martin
-
+    actors: 
+        - johan
+        - martin
   - actor: martin
     line: There shall be blood!
   - actor: johan
     line: Me no likey
   - actor: martin
     line: Okay - There shall be code
-
   - action: exit
-    actor: martin
+    actors: 
+        - martin
+  - actor: johan
+    line: Im alone
+  - action: exit
+    actors: 
+        - johan
