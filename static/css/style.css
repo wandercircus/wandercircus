@@ -203,6 +203,13 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 #templates { display: none; }
 
+.current-show.running .show-running, .current-show.no-show .no-show{
+  display: block;
+}
+
+.current-show > div {
+  display: none;
+}
 
 
 

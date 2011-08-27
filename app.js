@@ -9,6 +9,10 @@ var config      = require('./config.js'),
 
 var args = process.argv.slice(2);
 
+var theaters = {
+    irc: require('./lib/irctheater.js')
+};
+
 app.configure(function(){
     app.use(express.methodOverride());
     app.use(express.bodyParser());
@@ -56,6 +60,11 @@ io.sockets.on('connection', function(socket) {
     socket.emit('current show', currentShow.toJSON()); 
 });
 
-var theaters = {
-    irc: require('./lib/irctheater.js')
-};
+if (args.length > 0){
+    console.log("Running with", args[0]);
+    var theater = theaters.irc.getTheater();
+    var hamlet = skripts[args[0]];
+    theater.setup(hamlet.setup, function(){
+        theater.run(hamlet.skript);
+    });
+}
