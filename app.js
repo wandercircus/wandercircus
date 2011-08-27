@@ -33,9 +33,7 @@ var theaters = {
 
 var theater = theaters.irc.getTheater();
 
-var configFile = args.length > 0 ? args[0] : "example";
-
-var skript = Skript(configFile);
+var skript = skripts[0];
 theater.setup(skript.setup, function(){
     theater.run(skript.skript);
 });
