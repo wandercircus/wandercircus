@@ -13,7 +13,8 @@
     "nko": "0.1.1",
     "socket.io": ">=0.7.10",
     "underscore": "1.1.7",
-    "yamlparser": "0.0.2"
+    "yamlparser": "0.0.2",
+    "jsdom": "0.2.3"
   },
   "private": true
 }
