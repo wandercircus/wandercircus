@@ -9,7 +9,7 @@ setup:
   irc:
     server: irc.mysociety.org
     channel: "#nodespeare"
-  prefix: "asdf|"
+  prefix: "max]"
 skript:
   - action: announcement
     content: "An announcement!"
