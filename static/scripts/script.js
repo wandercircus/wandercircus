@@ -1,6 +1,6 @@
 function loadSkripts() {
     $.getJSON('/api/skripts', function(resp) {
-        resp.forEach(function(skript) {
+        $.each(resp, function(id, skript) {
             showSkript(skript);
         });
     });

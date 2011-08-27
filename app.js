@@ -38,8 +38,8 @@ app.get('/api/show', function(req, res) {
   res.send(JSON.stringify(currentShow));
 });
 
-app.get('/api/start/:id', function(req, res) {
-  currentShow.startShow(theaters.irc.getTheater(), scripts[eq.params.id]);
+app.post('/api/start/:id', function(req, res) {
+  currentShow.startShow(theaters.irc.getTheater(), skripts[req.params.id]);
   res.send("");
 });
 
