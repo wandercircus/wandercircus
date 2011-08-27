@@ -7,6 +7,7 @@ var path    = require('path'),
     io      = require('socket.io').listen(app);
 
 var config      = require('./config.js'),
+    utils       = require('./lib/utils.js'),
     currentShow = require('./lib/show.js'),
     skripts     = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
     votes       = {};
@@ -47,15 +48,19 @@ app.post('/api/vote/:id', function(req, res) {
         res.send(404);
         return;
     }
+
     var voteId = getVoteId(req);
-    if (voteId) {
+    if (process.env.NODE_ENV === 'production' && voteId) {
         res.send(403);
         return;
-    } 
-    votes[req.params.id] += 1;
-    io.sockets.emit('votes', votes);
+    }
+
+    skripts[req.params.id].votes += 1;
+    utils.calculateVotePercentage(skripts);
+    io.sockets.emit('votes', utils.stripForVotes(skripts));
+
     res.cookie('vote_id', req.params.id, { });
-    io.sockets.emit('current show', currentShow.toJSON());
+
     res.send(200);
 });
 

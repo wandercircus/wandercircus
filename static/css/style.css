@@ -201,6 +201,18 @@ table { border-collapse: collapse; border-spacing: 0; }
    Author: 
    ========================================================================== */
 
+.vote-bar-container {
+  height: 20px;
+  width: 500px;
+  background: white;
+}
+
+.vote-bar {
+  height: 20px;
+  width: 0px;
+  background: pink;
+}
+
 #templates { display: none; }
 
 .current-show.running .show-running, .current-show.stopped .no-show{
