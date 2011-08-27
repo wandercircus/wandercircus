@@ -67,7 +67,12 @@ if (args.length > 0){
     console.log("Running with", args[0]);
     var theater = theaters.irc.getTheater();
     var hamlet = skripts[args[0]];
+    var scene = 1795;
+    var runSkript = hamlet.skript;
+    if (scene !== undefined){
+        runSkript = hamlet.skript.slice(scene);
+    }
     theater.setup(hamlet.setup, function(){
-        theater.run(hamlet.skript);
+        theater.run(runSkript);
     });
 }
