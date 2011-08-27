@@ -1,0 +1,19 @@
+{
+  "author": "noooooooooooode",
+  "name": "DarstellendesSpiel",
+  "description": "IRC spam",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nko2/noooooooooooode.git"
+  },
+  "dependencies": {
+    "express": "2.4.6",
+    "irc": "0.2.0",
+    "nko": "0.1.1",
+    "socket.io": "0.7.9",
+    "underscore": "1.1.7",
+    "yamlparser": "0.0.2"
+  },
+  "private": true
+}
