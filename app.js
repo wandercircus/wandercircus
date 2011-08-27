@@ -1,5 +1,6 @@
 var args = process.argv.slice(2),
-    app = require('express').createServer(),
+    express = require('express'),
+    app = express.createServer(),
     config = require('./config.js'),
     skripts = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
 
