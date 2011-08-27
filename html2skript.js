@@ -7,7 +7,7 @@ var html = fs.readFileSync('hamlet.html').toString();
 
 
 var actors = {
-    "Claudius": "Claudius, King of Denmark.",
+    "KingClaudius": "Claudius, King of Denmark.",
     "Hamlet": "Hamlet, Son to the former, and Nephew to the present King.",
     "Polonius": "Polonius, Lord Chamberlain.",
     "Horatio": "Horatio, Friend to Hamlet.",
@@ -173,6 +173,7 @@ jsdom.env({
                 }
                 for (var j = 1; j < textParts.length; j += 1){
                     textPart = textParts[j].trim();
+                    textPart = textPart.replace(/—/g, " — ");
                     if (textPart.length === 0){
                         continue;
                     }
@@ -195,6 +196,10 @@ jsdom.env({
         } else {
             console.err("What?", tagName);
         }
+    }
+
+    for (i = 0; i < skript.length; i += 1){
+        skript[i].i = i;
     }
 
     var config = {
