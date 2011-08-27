@@ -10,7 +10,7 @@ setup:
   irc: 
     channel: "#petshop"
     prefix: mpdp|
-    server: irc.mysociety.org
+    server: irc.freenode.org
 skript: 
 - action: enter
   actors: 

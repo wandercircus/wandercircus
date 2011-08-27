@@ -85,7 +85,7 @@ actors = [
 irc = {
   :channel => '#petshop',
   :prefix => 'mpdp|',
-  :server => 'irc.mysociety.org'
+  :server => 'irc.freenode.org'
 }
 
 who_colon_what = /^([a-zA-Z.]+): (.+)$/
