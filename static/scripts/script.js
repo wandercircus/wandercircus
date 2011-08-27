@@ -1,28 +1,28 @@
-function loadSkripts() {
-    $.getJSON('/api/skripts', function(resp) {
-        $.each(resp, function(id, skript) {
-            showSkript(skript);
-        });
+function loadSkripts(skripts) {
+    console.log(skripts);
+    $.each(skripts, function(id, skript) {
+        showSkript(skript);
     });
 }
 
 function showSkript(skript) {
+    console.log(skript);
     $('#templates .skript').
         clone().
         find('.title').html(skript.title).end().
         find('.author').html(skript.author).end().
-        find('.start-link').click(function() {
-            startSkript(skript.id);
+        find('.vote').click(function() {
+            castVote(skript.id);
         }).end().
         appendTo('#skript-list');
 }
 
-function startSkript(id) {
-    $.post('/api/start/' + id);
+function castVote(id) {
+    document.socket.emit('vote', {'id': id});
 }
 
 function handleCurrentShow(data) {
-    console.log(data);
+    console.log("current show: " + data);
     var currentShow = JSON.parse(data);
 
     if (currentShow.status == 'running') {
@@ -35,7 +35,12 @@ function handleCurrentShow(data) {
 }
 
 $(document).ready(function() {
-    loadSkripts();
-    var socket = io.connect('/');
-    socket.on('current show', handleCurrentShow);
+    document.socket = io.connect('/');
+    document.socket.on('skripts', function(skripts) {
+      loadSkripts(JSON.parse(skripts));
+    });
+    document.socket.on('current show', handleCurrentShow);
+    document.socket.on('vote', function(socket) {
+      console.log('received a vote ' + socket.toString());
+    });
 });

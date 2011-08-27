@@ -30,7 +30,6 @@ app.configure('production', function() {
   app.use(express.errorHandler());
 });
 
-
 app.get('/api/theatres', function(req, res) {
   res.send(JSON.stringify(theaters));
 });
@@ -53,7 +52,18 @@ app.get('/', function(req, res) {
 app.listen(config.port, config.host);
 
 io.sockets.on('connection', function(socket) {
-    socket.emit('current show', currentShow.toJSON()); 
+    socket.emit('current show', currentShow.toJSON());
+    socket.emit('skripts', JSON.stringify(skripts));
+});
+
+io.sockets.on('vote', function(id) {
+    console.log("vote: " + id);
+
+    if (skripts[id]) {
+      skripts[id] =+ 1;
+    }
+
+    io.sockets.emit('skripts', JSON.stringify(skripts));
 });
 
 if (args.length > 0){
