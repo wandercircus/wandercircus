@@ -1,4 +1,4 @@
-require.paths.unshift('./node_modules/express/node_modules'); // wtf-fix
+require.paths.unshift(__dirname + '/node_modules/express/node_modules'); // wtf-fix
 
 var path    = require('path'),
     express = require('express'),
