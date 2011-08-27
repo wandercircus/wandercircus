@@ -4,22 +4,21 @@ var args = process.argv.slice(2);
     debugger;
 var    skripts = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
     
-// var theaters = {
-//     irc: require('./lib/irctheatre.js')
-// };
-// 
-// var theater = theatres.irc.getTheater();
-
 app.get('/', function(req, res){
      res.send(JSON.stringify(skripts));
    });
 
 app.listen(config.port, config.host);
 
+var theaters = {
+    irc: require('./lib/irctheater.js')
+};
 
-// readJSONFile(configFile, function(data){
-//     theater.setup(data.setup, function(){
-//         console.log("everybody in");
-//         theater.run(data.script);
-//     });
-// });
+var theater = theaters.irc.getTheater();
+
+var configFile = args.length > 0 ? args[0] : "example";
+
+var skript = Skript(configFile);
+theater.setup(skript.setup, function(){
+    theater.run(skript.skript);
+});
