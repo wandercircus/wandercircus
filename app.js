@@ -1,12 +1,29 @@
-var args = process.argv.slice(2);
+var args = process.argv.slice(2),
     app = require('express').createServer(),
-    config = require('./config.js');
-    debugger;
-var    skripts = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
-    
-app.get('/', function(req, res){
+    config = require('./config.js'),
+    skripts = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
+
+
+app.configure(function(){
+    app.use(express.methodOverride());
+    app.use(express.bodyParser());
+    app.use(app.router);
+});
+
+app.configure('development', function() {
+    app.use(express.static(__dirname + '/static'));
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+
+app.configure('production', function() {
+  var oneYear = 31557600000;
+  app.use(express.static(__dirname + '/static', { maxAge: oneYear }));
+  app.use(express.errorHandler());
+});
+
+app.get('/', function(req, res) {
      res.send(JSON.stringify(skripts));
-   });
+});
 
 app.listen(config.port, config.host);
 
