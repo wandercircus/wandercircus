@@ -5,9 +5,11 @@ setup:
     - id: johan
       name: Johan Ohne Land
   irc:
-    server: irc.freenode.com
+    server: irc.mysociety.org
     channel: "#nodespeare"
 skript:
+  - action: announcement
+    content: "An announcement!"
   - action: enter
     actors: 
         - johan
