@@ -1,6 +1,7 @@
 {
+ "title": "Hamlet",
+ "author": "Shakespeare",
  "setup": {
-  "author": "Shakespeare",
   "irc": {
    "server": "irc.mysociety.org",
    "channel": "#nodespeare"
