@@ -83,7 +83,7 @@ if (args.length > 0){
     console.log("Running with", args[0]);
     var theater = theaters.irc.getTheater();
     var hamlet = skripts[args[0]];
-    var scene = parseInt(args[1], 10);
+    var scene = parseInt(args[1] || 0, 10);
     var runSkript = hamlet.skript;
     if (scene !== undefined){
         console.log("Cut to", scene);
