@@ -18,7 +18,8 @@ function showSkript(skript) {
 }
 
 function castVote(id) {
-    document.socket.emit('vote', id);
+    $.post('/api/vote/' + id, function() {});
+    
 }
 
 function handleCurrentShow(data) {
@@ -40,7 +41,7 @@ $(document).ready(function() {
       loadSkripts(skripts);
     });
     document.socket.on('current show', handleCurrentShow);
-    document.socket.on('vote', function(socket) {
-      console.log('received a vote ', socket.toString());
+    document.socket.on('votes', function(data) {
+      console.log('received a vote ', data.toString());
     });
 });

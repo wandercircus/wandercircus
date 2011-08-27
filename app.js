@@ -1,5 +1,8 @@
+require.paths.unshift('./node_modules/express/node_modules'); // wtf-fix
+
 var path    = require('path'),
     express = require('express'),
+    connect = require('connect'),
     app     = express.createServer(),
     io      = require('socket.io').listen(app);
 
@@ -39,11 +42,21 @@ app.get('/api/skripts', function(req, res) {
   res.send(JSON.stringify(skripts));
 });
 
-app.post('/api/start/:id', function(req, res) {
-  currentShow.startShow(theaters.irc.getTheater(), skripts[req.params.id], function() {
+app.post('/api/vote/:id', function(req, res) {
+    var cookieString = req.headers.cookie;
+    var parsedCookies = connect.utils.parseCookie(cookieString);
+    var voteId = parsedCookies['vote_id'];
+    if (!voteId) {
+      votes[id] += 1;
+      io.sockets.emit('votes', votes);
+      
+    }
+    response.writeHead(200, {
+        'Set-Cookie': 'vote_id=' + voteId,
+        'Content-Type': 'text/plain'
+    });
     io.sockets.emit('current show', currentShow.toJSON());
-  });
-  res.send("");
+    res.send("");
 });
 
 app.get('/', function(req, res) {
@@ -55,12 +68,7 @@ app.listen(config.port, config.host);
 io.sockets.on('connection', function(socket) {
     socket.emit('current show', currentShow.toJSON());
     socket.emit('skripts', skripts);
-    socket.on('vote', function(id) {
-        if (skripts[id]) {
-          votes[id] += 1;
-          io.sockets.emit('vote', votes);
-        }
-    });
+
 });
 
 if (args.length > 0){
