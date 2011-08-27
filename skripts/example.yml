@@ -1,3 +1,5 @@
+title: The tale of Martin The Great Conqueror and Johan Ohne Land
+author: Johan Uhle
 setup:
   actors:
     - id: martin
@@ -7,6 +9,7 @@ setup:
   irc:
     server: irc.mysociety.org
     channel: "#nodespeare"
+  prefix: "asdf|"
 skript:
   - action: announcement
     content: "An announcement!"
