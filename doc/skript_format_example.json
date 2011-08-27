@@ -1,0 +1,16 @@
+{
+    "setup": {
+        "actors" : [
+            { "name" : "actor1"}
+        ],
+        "ircServer": "irc.oftc.net",
+        "ircChannel": "#nodespeare"
+    },
+    "script": [
+        { "type" : "line", "actor" : "actor1", "line" : "There shall be blood!" },
+        { "type" : "line", "actor" : "actor1", "line" : "Me no likey" },
+        { "type" : "line", "actor" : "actor1", "line" : "Okay - There shall be code" },
+        { "type" : "line", "actor" : "actor1", "line" : "Yay" }
+    ]
+}
+

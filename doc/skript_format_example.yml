@@ -1,0 +1,24 @@
+setup:
+  actors:
+    - id: martin
+      name: Martin The Great Conqueror
+    - id: johan
+      name: Johan Ohne Land
+  irc:
+    server: irc.freenode.com
+    channel: nodespeare
+skript:
+  - action: enter
+    actor: johan
+  - action: enter
+    actor: martin
+
+  - actor: martin
+    line: There shall be blood!
+  - actor: johan
+    line: Me no likey
+  - actor: martin
+    line: Okay - There shall be code
+
+  - action: exit
+    actor: martin
