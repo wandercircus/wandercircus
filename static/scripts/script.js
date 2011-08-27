@@ -9,6 +9,7 @@ function showSkript(skript) {
     console.log(skript);
     $('#templates .skript').
         clone().
+        attr('id', 'skript-' + skript.id).
         find('.title').html(skript.title).end().
         find('.author').html(skript.author).end().
         find('.vote').click(function() {
@@ -18,8 +19,9 @@ function showSkript(skript) {
 }
 
 function castVote(id) {
-    $.post('/api/vote/' + id, function() {});
-    
+    $.post('/api/vote/' + id, function() {
+        $('#skript-' + id).addClass('voted-for');
+    });
 }
 
 function handleCurrentShow(data) {

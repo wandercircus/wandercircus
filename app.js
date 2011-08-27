@@ -46,16 +46,12 @@ app.post('/api/vote/:id', function(req, res) {
     var cookieString = req.headers.cookie;
     var parsedCookies = connect.utils.parseCookie(cookieString);
     var voteId = parsedCookies['vote_id'];
-    if (!voteId) {
-      votes[id] += 1;
+    if (!voteId && skripts[req.params.id]) {
+      votes[req.params.id] += 1;
       io.sockets.emit('votes', votes);
-      
+      res.header('Set-Cookie', 'vote_id=' + req.params.id);
+      io.sockets.emit('current show', currentShow.toJSON());
     }
-    response.writeHead(200, {
-        'Set-Cookie': 'vote_id=' + voteId,
-        'Content-Type': 'text/plain'
-    });
-    io.sockets.emit('current show', currentShow.toJSON());
     res.send("");
 });
 

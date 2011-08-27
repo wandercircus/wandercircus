@@ -211,6 +211,10 @@ table { border-collapse: collapse; border-spacing: 0; }
   display: none;
 }
 
+.skript.voted-for {
+  font-weight: bold;;
+}
+
 
 
 
