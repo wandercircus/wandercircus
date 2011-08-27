@@ -19,7 +19,7 @@ function showSkript(skript) {
 }
 
 function castVote(id) {
-    $.post('/api/vote/' + id, function() {
+    jQuery.post('/api/vote/' + id, function(res) {
         $('#skript-' + id).addClass('voted-for');
     });
 }

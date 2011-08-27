@@ -43,16 +43,22 @@ app.get('/api/skripts', function(req, res) {
 });
 
 app.post('/api/vote/:id', function(req, res) {
-    var cookieString = req.headers.cookie;
+    if (!skripts[req.params.id]) {
+        res.send(404);
+        return;
+    }
+    var cookieString = req.headers.cookie || "";
     var parsedCookies = connect.utils.parseCookie(cookieString);
     var voteId = parsedCookies['vote_id'];
-    if (!voteId && skripts[req.params.id]) {
-      votes[req.params.id] += 1;
-      io.sockets.emit('votes', votes);
-      res.header('Set-Cookie', 'vote_id=' + req.params.id);
-      io.sockets.emit('current show', currentShow.toJSON());
-    }
-    res.send("");
+    if (voteId) {
+        res.send(403);
+        return;
+    } 
+    votes[req.params.id] += 1;
+    io.sockets.emit('votes', votes);
+    res.header('Set-Cookie', 'vote_id=' + req.params.id);
+    io.sockets.emit('current show', currentShow.toJSON());
+    res.send(200);
 });
 
 app.get('/', function(req, res) {
