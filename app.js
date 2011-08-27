@@ -38,6 +38,11 @@ app.get('/api/show', function(req, res) {
   res.send(JSON.stringify(currentShow));
 });
 
+app.get('/api/start/:id', function(req, res) {
+  currentShow.startShow(theaters.irc.getTheater(), scripts[eq.params.id]);
+  res.send("");
+});
+
 app.get('/', function(req, res) {
   res.sendfile(path.join(__dirname, 'static', 'index.html'));
 });
@@ -47,12 +52,3 @@ app.listen(config.port, config.host);
 var theaters = {
     irc: require('./lib/irctheater.js')
 };
-
-var theater = theaters.irc.getTheater();
-
-var skript = skripts[0];
-theater.setup(skript.setup, function(){
-    theater.run(skript.skript);
-    currentShow.update("running", theater, skript, "http://example.com");
-});
-
