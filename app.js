@@ -1,6 +1,6 @@
 require.paths.unshift(__dirname + '/node_modules/express/node_modules'); // wtf-fix
 
-require('nko');
+require('nko')('L+FRhsyUr5+PPVlu');
 
 var path    = require('path'),
     express = require('express'),

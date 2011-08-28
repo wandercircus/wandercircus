@@ -10,7 +10,7 @@
   "dependencies": {
     "express": "2.4.6",
     "irc": "0.2.0",
-    "nko": "0.1.1",
+    "nko": "*",
     "socket.io": ">=0.7.10",
     "underscore": "1.1.7",
     "yamlparser": "0.0.2",
