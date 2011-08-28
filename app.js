@@ -6,6 +6,9 @@ var path    = require('path'),
     app     = express.createServer(),
     io      = require('socket.io').listen(app);
 
+io.enable('browser client minification');  // send minified client
+io.enable('browser client etag');          // apply etag caching logic based on version number
+
 var config      = require('./config.js'),
     utils       = require('./lib/utils.js'),
     currentShow = require('./lib/show.js'),
