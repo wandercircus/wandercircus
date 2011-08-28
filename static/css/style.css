@@ -205,6 +205,10 @@ h1 {
   color: #402020;
 }
 
+.highlight {
+    color: #DD646E;
+}
+
 h2 {
   color: #402020;
   font-family: 'Kranky', cursive;
