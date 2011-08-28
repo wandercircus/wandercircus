@@ -354,6 +354,15 @@ footer .border {
   letter-spacing: 0;
 }
 
+.border a , .border a:visited {
+    font-family: 'JFRingmasterRegular' Georgia serif;
+    color: #DD646E;
+    text-decoration: none;
+}
+
+.border a:hover {
+    color: rgba(64,32,32, 0.7);
+}
 
 /* =============================================================================
    Non-semantic helper classes
