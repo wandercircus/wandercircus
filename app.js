@@ -84,12 +84,16 @@ app.post('/api/vote/:id', function(req, res) {
       skript.channel = req.body.channel;
     }
     utils.calculateVotePercentage(skripts);
-    io.sockets.emit('votes', utils.stripForVotes(skripts));
+    emitVotes(io.sockets);
 
     req.session.voteId = req.params.id;
 
     res.send(200);
 });
+
+function emitVotes(socket) {
+    socket.emit('votes', utils.stripForVotes(skripts));
+}
 
 function getVoteId(request, cb) {
     var cookieString = (request && request.headers.cookie) || "";
@@ -174,9 +178,11 @@ function emitShowTimes(socket) {
 function resetVotes() {
     for (var id in skripts) {
         skripts[id].votes = 0;
+        skripts[id].votePercentage = 0;
     }
     sessionStore.clear(function() {
         io.sockets.emit("my vote", null);
+        emitVotes(io.sockets);
     });
 }
 

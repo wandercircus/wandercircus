@@ -41,8 +41,13 @@ function castVote(id) {
 }
 
 function highlightVote(id) {
-    $('#skript-' + id).addClass('voted-for');
-    $('#skript-list').addClass('vote-casted')
+    if (id) {
+        $('#skript-' + id).addClass('voted-for');
+        $('#skript-list').addClass('vote-casted')
+    } else {
+        $('.skript').removeClass('voted-for');
+        $('#skript-list').removeClass('vote-casted')
+    }
 }
 
 function handleShowTimes(data) {
