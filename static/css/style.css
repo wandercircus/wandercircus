@@ -236,7 +236,10 @@ h1 {
 
 h2 {
   color: #402020;
-  font-family: 'Kranky', cursive;
+  font-family: 'JFRingmasterRegular' Georgia serif;
+  font-size: 30px;
+  margin: 0.5em 0;
+  white-space: nowrap;
 }
 
 li {
@@ -315,18 +318,22 @@ ul {
 
 #templates { display: none; }
 
-#show.running .current-show, #show.stopped .next-show { display: block; }
-#show .current-show, #show .next-show { display: none; }
+#show.running #current-show, #show.stopped #next-show { display: block; }
+#show #current-show, #show #next-show { display: none; }
 
-#show .next-show .no-show-title, .next-show .next-show-title { display: none; }
-#show .next-show.no-title .no-show-title { display: inline; }
-#show .next-show.title .next-show-title { display: inline; }
+#next-show.no-upcoming-show #no-upcoming-show, #next-show.upcoming-show #upcoming-show { display: block; }
+#next-show #no-upcoming-show, #next-show #upcoming-show { display: none; }
 
 #show {
   display: inline-block;
-  width: 500px;
+  width: 440px;
   min-height: 320px;
+  font-size: 18px;
   vertical-align: top;;
+}
+
+#show p, #show li{
+  padding-left: 10px;
 }
 
 footer {
@@ -639,3 +646,7 @@ header h1 .fix-kerning2 {
     margin-bottom: 5px;
 }
 
+#about.lightbox a {
+    color: #99454C;
+    text-decoration: none;
+}

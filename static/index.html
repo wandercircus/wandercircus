@@ -23,7 +23,7 @@
 	</header>
   <div id="main" role="main">
     <div id="show">
-      <div class="current-show">
+      <div id="current-show">
         <h2>A Show is running</h2>
         <p>We are currently playing <span class="name"></span> in <a class="channel" href=""><span class="channel"></span></a></p>
 
@@ -33,11 +33,17 @@
           <li>If you are no nerd: <a href="#irc" class="open-lightbox">Click here</a></li>
         </ul>
       </div>
-      <div class="next-show">
-        <h2>Next Show</h2>
-        <span class="no-show-title">No votes yet!</span>
-        <span class="next-show-title"></span>
-        <div class="countdown"></div>
+      <div id="next-show">
+        <h2>Next Show in <span class="countdown"></span></h2>
+        <p id="no-upcoming-show">
+          Currently no play has been voted for. Select one at the bottom and
+          give your vote. You may even select a different channel if you wish to.
+        </p>
+        <p id="upcoming-show">
+          The upcoming play will be <span class="next-show-title"></span> by
+          <span class="next-show-author"></span>. If you would like to see
+          another play performed by us, please give your vote below.
+        </p>
       </div>
     </div>
     <div href="#about" class="open-lightbox" id="robocolown"></div>

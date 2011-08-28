@@ -67,7 +67,7 @@ function handleCurrentShow(currentShow) {
     if (currentShow.status == 'running') {
       $('#show')
         .removeClass('stopped').addClass('running')
-        .find('.current-show')
+        .find('#current-show')
         .find('.name').html(currentShow.skript.title).end()
         .find('span.channel').text(currentShow.skript.channel).end()
         .find('a.channel').attr('href', 'irc://chat.freenode.net/' + currentShow.skript.channel);
@@ -79,7 +79,7 @@ function handleCurrentShow(currentShow) {
 function handleNextShow(time) {
     time = new Date(time);
     console.log("Next show: ", time);
-    $('.next-show').
+    $('#next-show').
         find('.countdown').removeClass('hasCountdown').html('').end().
         find('.countdown').countdown({
             until: time,
@@ -140,14 +140,16 @@ $(document).ready(function() {
             renderVoteData(vote);
         });
     });
-    document.socket.on('next show title', function(title) {
-        if (title) {
-            $('#show .next-show').
-                addClass('title').removeClass('no-title').
-                find('.next-show-title').text(title.title);
+    document.socket.on('next show', function(show) {
+        if (show) {
+            console.log('next show is', show)
+            $('#next-show').
+                addClass('upcoming-show').removeClass('no-upcoming-show').
+                find('.next-show-title').text(show.title).end().
+                find('.next-show-author').text(show.author);
         } else {
-            $('#show .next-show').
-                removeClass('title').addClass('no-title')
+            $('#next-show').
+                removeClass('upcoming-show').addClass('no-upcoming-show')
         }
     })
     document.socket.on('my vote', function(id) {
