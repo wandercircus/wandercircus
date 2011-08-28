@@ -120,6 +120,7 @@ function nextShow() {
         var theater = theaters.irc.getTheater();
         // TODO pick channel
         currentShow.startShow(theater, skript, function() {
+            resetVotes();
             scheduleShow();
         }, function doneClb() {
             emitShowTimes(io.sockets);
@@ -136,6 +137,7 @@ function scheduleShow() {
     nextQuarterH = nextShowTime.getMinutes();
     nextQuarterH -= (nextQuarterH % 15) - 15;
     nextShowTime.setMinutes(nextQuarterH);
+    nextShowTime.setSeconds(0); nextShowTime.setMilliSeconds(0);
     showTimeout = setTimeout(nextShow, Math.max(nextShowTime - Date.now(), 0));
     console.log("Scheduled show for ", new Date(nextShowTime));
     emitShowTimes(io.sockets);
@@ -147,6 +149,15 @@ function emitShowTimes(socket) {
     socket.emit('show times', {
         'current': currentShow.toJSON(), 
         'next': nextShowTime
+    });
+}
+
+function resetVotes() {
+    for (var id in skripts) {
+        skripts[id].votes = 0;
+    }
+    sessionStore.clear(function() {
+        io.sockets.emit("my vote", null);
     });
 }
 
