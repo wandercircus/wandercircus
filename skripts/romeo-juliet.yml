@@ -13,6 +13,8 @@ setup:
     prefix: "rj|"
     server: irc.freenode.org
 skript:
+- action: announcement
+  content: "[A tepid night. Romeo sneaks through the backyard. Juliet appears on the window of her room. They spot each other]"
 - action: enter
   actors:
   - Romeo
