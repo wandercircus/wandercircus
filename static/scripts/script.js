@@ -69,6 +69,7 @@ function handleNextShow(time) {
     console.log("Next show: ", time);
     $('#next-show').
         find('.time').html(time.toLocaleString()).end().
+        find('.countdown').removeClass('hasCountdown').html('').end().
         find('.countdown').countdown({'until': time});
 }
 
