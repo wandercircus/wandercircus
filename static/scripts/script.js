@@ -121,6 +121,16 @@ $(document).ready(function() {
             renderVoteData(vote);
         });
     });
+    document.socket.on('next show title', function(title) {
+        if (title) {
+            $('#show .next-show').
+                addClass('title').removeClass('no-title').
+                find('.next-show-title').text(title.title);
+        } else {
+            $('#show .next-show').
+                removeClass('title').addClass('no-title')
+        }
+    })
     document.socket.on('my vote', function(id) {
         highlightVote(id);
         var hasVoted = id !== null;

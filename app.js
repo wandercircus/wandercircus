@@ -105,6 +105,7 @@ app.post('/api/vote/:id', function(req, res) {
 
 function emitVotes(socket) {
     socket.emit('votes', utils.stripForVotes(skripts));
+    socket.emit('next show title', getNextShowTitle());
 }
 
 function getVoteId(request, cb) {
@@ -126,6 +127,7 @@ app.listen(config.port, config.host);
 
 io.sockets.on('connection', function(socket) {
     emitShowTimes(socket);
+    emitVotes(socket);
     getVoteId(socket.handshake, function(voteId) {
         socket.emit('my vote', voteId || null);
     });
@@ -134,8 +136,7 @@ io.sockets.on('connection', function(socket) {
 var showTimeout = null;
 var nextShowTime = Date.now() + SHOW_INTERVAL;
 
-function nextShow() {
-    clearTimeout(showTimeout);
+function getNextShowTitle() {
     var skript, winnerSkript, maxVotes = 0;
     for (var id in skripts) {
         skript = skripts[id];
@@ -145,6 +146,12 @@ function nextShow() {
         }
         skript = null;
     }
+    return winnerSkript;
+}
+
+function nextShow() {
+    clearTimeout(showTimeout);
+    var winnerSkript = getNextShowTitle();
     if (winnerSkript) {
         console.log("Starting scheduled show, winner is ", winnerSkript.title);
         var theater = theaters.irc.getTheater();

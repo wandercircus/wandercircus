@@ -294,6 +294,10 @@ ul.vote-casted a {
 #show.running .current-show, #show.stopped .next-show { display: block; }
 #show .current-show, #show .next-show { display: none; }
 
+#show .next-show .no-show-title, .next-show .next-show-title { display: none; }
+#show .next-show.no-title .no-show-title { display: inline; }
+#show .next-show.title .next-show-title { display: inline; }
+
 #show {
   display: inline-block;
   width: 500px;
