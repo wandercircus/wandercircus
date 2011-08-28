@@ -87,6 +87,12 @@ function handleNextShow(time) {
 
 var openLightBox = function(openId){
     var box = $(openId);
+    var channel = $('.current-show .channel').text();
+    if (!box.hasClass('running') || (box.hasClass('running') && box.attr('channel') != channel)) {
+      box.html('<iframe src="http://webchat.freenode.net?nick=onlooker-.&channels=' + channel + '&uio=MT1mYWxzZSY3PWZhbHNlJjk9dHJ1ZSYxMT0yMQ7f" width="647" height="400"></iframe>');
+      box.addClass('running');
+      box.attr('channel', channel);
+    };
     box.fadeIn();
     box.css({
         'margin-top' : -(box.height() + 80) / 2,

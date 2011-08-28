@@ -13,7 +13,7 @@ setup:
     server: irc.freenode.org
 skript:
 - action: announcement
-  content: "[We are in a classical british pet shop. Goldfishes swim in their tanks, Golden Retrivers lick their own balld in their cages and a ton of cat food is stacked in one corner of the room. It's mid-day, the slow part.]"
+  content: "[We are in a classical british pet shop. Goldfishes swim in their tanks, Golden Retrivers lick their balls in the cages and a ton of cat food is stacked in a corner of the room. It's mid-day, the slow part.]"
 - action: enter
   actors:
   - Owner
@@ -62,7 +62,13 @@ skript:
   line: Nononono, no, no! 'E's resting!
 - action: speak
   actor: MrPraline
-  line: All right then, if he's restin', I'll wake him up! (shouting at the cage) 'Ello, Mister Polly Parrot! I've got a lovely fresh cuttle fish for you if you show...
+  line: All right then, if he's restin', I'll wake him up!
+- action: perform
+  actor: MrPraline
+  what: shouts at the cage
+- action: speak
+  actor: MrPraline
+  line: "'Ello, Mister Polly Parrot! I've got a lovely fresh cuttle fish for you if you show..."
 - action: perform
   actor: Owner
   what: hits the cage
@@ -81,12 +87,15 @@ skript:
 - action: speak
   actor: Owner
   line: I never, never did anything...
-- action: speak
-  actor: MrPraline
-  line: (yelling and hitting the cage repeatedly) 'ELLO POLLY!!!!! Testing! Testing! Testing! Testing! This is your nine o'clock alarm call!
 - action: perform
   actor: MrPraline
-  what: Takes parrot out of the cage and thumps its head on the counter. Throws it up in the air and watches it plummet to the floor.
+  what: yells and hits the cage repeatedly
+- action: speak
+  actor: MrPraline
+  line: "'ELLO POLLY!!!!! Testing! Testing! Testing! Testing! This is your nine o'clock alarm call!"
+- action: perform
+  actor: MrPraline
+  what: takes parrot out of the cage and thumps its head on the counter. Throws it up in the air and watches it plummet to the floor.
 - action: speak
   actor: MrPraline
   line: Now that's what I call a dead parrot.
@@ -128,7 +137,13 @@ skript:
   line: "'E's not pinin'! 'E's passed on! This parrot is no more! He has ceased to be! 'E's expired and gone to meet 'is maker! 'E's a stiff! Bereft of life, 'e rests in peace! If you hadn't nailed 'im to the perch 'e'd be pushing up the daisies! 'Is metabolic processes are now 'istory! 'E's off the twig! 'E's kicked the bucket, 'e's shuffled off 'is mortal coil, run down the curtain and joined the bleedin' choir invisibile!! THIS IS AN EX-PARROT!!"
 - action: speak
   actor: Owner
-  line: Well, I'd better replace it, then. (he takes a quick peek behind the counter) Sorry squire, I've had a look 'round the back of the shop, and uh, we're right out of parrots.
+  line: Well, I'd better replace it, then...
+- action: perform
+  actor: Owner
+  what: takes a quick peek behind the counter
+- action: speak
+  actor: Owner
+  line: "Sorry squire, I've had a look 'round the back of the shop, and uh, we're right out of parrots."
 - action: speak
   actor: MrPraline
   line: I see. I see, I get the picture.
@@ -153,9 +168,11 @@ skript:
 - action: speak
   actor: MrPraline
   line: Well.
+- action: announcement
+  content: quietly
 - action: speak
   actor: Owner
-  line: (quietly) D'you.... d'you want to come back to my place?
+  line: D'you.... d'you want to come back to my place?
 - action: perform
   actor: MrPraline
   what: looks around

@@ -13,22 +13,26 @@
 </head>
 <body>
 
-<!-- nko badge -->
-<iframe src="http://nodeknockout.com/iframe/noooooooooooode" frameborder=0 scrolling=no allowtransparency=true width=115 height=25>
+<iframe id="nko-badge" src="http://nodeknockout.com/iframe/noooooooooooode" frameborder=0 scrolling=no allowtransparency=true width=115 height=25>
 </iframe>
 
 
 <div id="container">
 	<header>
   <h1><span class="fix-kerning">W</span>ande<span class="fix-kerning2">r</span>c<span class="highlight">i</span><span class="highlight fix-kerning2">r</span><span class="highlight">c</span>us</h1>
-  <div class="border">☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆</div>
+  <div class="border">☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;<span class="no-space">☆</span></div>
 	</header>
   <div id="main" role="main">
     <div id="show">
       <div class="current-show">
         <h2>Current Show</h2>
-          <p>Show is running</p>
+          <p>Show is running:</p>
           <span class="name"></span>
+          <p>Watch the show</p>
+          <ul>
+            <li>On IRC in the channel #<span class="channel"></span> on Freenode (chat.freenode.net)</li>
+            <li>In your browser by clicking <a href="#">here</a></li>
+          </ul>
       </div>
       <div class="next-show">
         <h2>Next Show</h2>
@@ -45,7 +49,7 @@
 	  </table>
 	  	  
 	  <footer>
-	    <div class="border">☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆</div>
+	    <div class="border">☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;<span class="no-space">☆</space></div>
 	    <ul>
 	      <li><a href="#irc" class="open-lightbox">IRC</a></li>
         <li><a href="#about" class="open-lightbox">About</a></li>
@@ -75,14 +79,13 @@
       <p>When a show is running it's location is shown on the website. If you are a nerd, just join the displayed channel on chat.freenode.net. If you are not a nerd, there is a link displayed to open a webchat in your browser.</p>
 
       <h3>Are you spammers?</h3>
-      <p>No, we are artists. If you feel that we are spamming your channel, please write "no more circus" during the performance and we will move on.</p>
+      <p>No, we are artists. If you feel that we are spamming your channel, please write "stop show" during the performance and we will move on.</p>
 
       <h3>How can I contact you?</h3>
       <p>Write us on twitter at <a href="http://twitter.com/wandercircus">@wandercircus</a></p>
     </div>
 
     <div id="irc" class="lightbox">
-      <iframe src="http://webchat.freenode.net?nick=onlooker-.&channels=nodespeare&uio=MT1mYWxzZSY3PWZhbHNlJjk9dHJ1ZSYxMT0yMQ7f" width="647" height="400"></iframe>
     </div>
 
   </div>
