@@ -137,7 +137,7 @@ function scheduleShow() {
     nextQuarterH = nextShowTime.getMinutes();
     nextQuarterH -= (nextQuarterH % 15) - 15;
     nextShowTime.setMinutes(nextQuarterH);
-    nextShowTime.setSeconds(0); nextShowTime.setMilliSeconds(0);
+    nextShowTime.setSeconds(0); nextShowTime.setMilliseconds(0);
     showTimeout = setTimeout(nextShow, Math.max(nextShowTime - Date.now(), 0));
     console.log("Scheduled show for ", new Date(nextShowTime));
     emitShowTimes(io.sockets);
