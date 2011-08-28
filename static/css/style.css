@@ -323,4 +323,132 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-style: normal;
 }
 
+body {
+}
 
+
+
+header.background {
+        background: #fac2c9; /* Old browsers */
+    background: -moz-linear-gradient(top, #fa96a0 0%, #fac2c9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fa96a0), color-stop(100%,#fac2c9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fa96a0 0%,#fac2c9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fa96a0 0%,#fac2c9 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #fa96a0 0%,#fac2c9 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa96a0', endColorstr='#fac2c9',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #fa96a0 0%,#fac2c9 100%); /* W3C */
+
+}
+
+h1 {
+    font-family: 'JFRingmasterRegular' Georgia serif;
+}
+
+header h1 {
+    font-size: 64pt;
+    text-align: center;
+    font-family: 'JFRingmasterRegular' Georgia serif;
+    margin: 0px;
+}
+
+header h1 .fix-kerning {
+    letter-spacing: -0.2em;
+}
+header h1 .fix-kerning2 {
+    letter-spacing: -0.05em;
+}
+
+
+#main {
+    position:relative;
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 100px;
+    min-height: 530px;
+}
+
+@-webkit-keyframes dance {
+    88% {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    90% {
+        -moz-transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+    }
+    92% {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    94% {
+        -moz-transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+    }
+    96% {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    98% {
+        -moz-transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+    }
+    100% {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+}
+
+#robocolown {
+    position: absolute;
+    right: 0px;
+    width: 504px;
+    height: 530px;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    background: url('../img/roboclown.png') no-repeat 0px 0px;
+    -webkit-animation-name: dance;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+
+#lightbox-background {
+    display: none;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    opacity: .80;
+    z-index: 9999;
+}
+.lightbox {
+    display: none;
+    background: #fff;
+    padding: 20px;
+    border: 20px solid #fff;
+    float: left;
+    position: fixed;
+    top: 50%; left: 50%;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 20px #000;
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
