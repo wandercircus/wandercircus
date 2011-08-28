@@ -1,0 +1,98 @@
+author: Quentin Tarrentino
+title: Pulp Fiction
+setup:
+  actors:
+  - id: Jules
+    name: Jules Winnfield
+  - id: Vincent
+    name: Vincent Vega
+  irc:
+    channel: "#74chevy"
+    prefix: pf|
+    server: irc.freenode.org
+skript: 
+- action: announcement
+  content: An old gas guzzling, dirty, white 1974 Chevy Nova barrels down a homeless-ridden street in Hollywood. In the front seat are two young fellas -- one white, one black -- both wearing cheap black suits with thin black ties under long green dusters. Their names are Vincent Vega (white) and Jules Winnfield (black). Jules is behind the wheel.
+- action: enter
+  actors: 
+  - Jules
+  - Vincent
+- action: speak
+  actor: Jules
+  line: " -- okay now, tell me about the hash bars?"
+- action: speak
+  actor: Vincent
+  line: What so you want to know?
+- action: speak
+  actor: Jules
+  line: Well, hash is legal there, right?
+- action: speak
+  actor: Vincent
+  line: Yeah, it's legal, but is ain't a hundred percent legal. I mean you can't walk into a restaurant, roll a joint, and start puffin' away. You're only supposed to smoke in your home or certain designated places.
+- action: speak
+  actor: Jules
+  line: Those are hash bars?
+- action: speak
+  actor: Vincent
+  line: "Yeah, it breaks down like this: it's legal to buy it, it's legal to own it and, if you're the proprietor of a hash bar, it's legal to sell it. It's legal to carry it, which doesn't really matter 'cause -- get a load of this -- if the cops stop you, it's illegal for this to search you. Searching you is a right that the cops in Amsterdam don't have."
+- action: speak
+  actor: Jules
+  line: That did it, man -- I'm fuckin' goin', that's all there is to it.
+- action: speak
+  actor: Vincent
+  line: You'll dig it the most. But you know what the funniest thing about Europe is?
+- action: speak
+  actor: Jules
+  line: What?
+- action: speak
+  actor: Vincent
+  line: It's the little differences. A lotta the same shit we got here, they got there, but there they're a little different.
+- action: speak
+  actor: Jules
+  line: Examples?
+- action: speak
+  actor: Vincent
+  line: Well, in Amsterdam, you can buy beer in a movie theatre. And I don't mean in a paper cup either. They give you a glass of beer, like in a bar. In Paris, you can buy beer at MacDonald's. Also, you know what they call a Quarter Pounder with Cheese in Paris?
+- action: speak
+  actor: Jules
+  line: They don't call it a Quarter Pounder with Cheese?
+- action: speak
+  actor: Vincent
+  line: No, they got the metric system there, they wouldn't know what the fuck a Quarter Pounder is.
+- action: speak
+  actor: Jules
+  line: What'd they call it?
+- action: speak
+  actor: Vincent
+  line: Royale with Cheese.
+- action: speak
+  actor: Jules
+  line: (repeating) Royale with Cheese. What'd they call a Big Mac?
+- action: speak
+  actor: Vincent
+  line: Big Mac's a Big Mac, but they call it Le Big Mac.
+- action: speak
+  actor: Jules
+  line: What do they call a Whopper?
+- action: speak
+  actor: Vincent
+  line: I dunno, I didn't go into a Burger King. But you know what they put on french fries in Holland instead of ketchup?
+- action: speak
+  actor: Jules
+  line: What?
+- action: speak
+  actor: Vincent
+  line: Mayonnaise.
+- action: speak
+  actor: Jules
+  line: Goddamn!
+- action: speak
+  actor: Vincent
+  line: I seen 'em do it. And I don't mean a little bit on the side of the plate, they fuckin' drown 'em in it.
+- action: speak
+  actor: Jules
+  line: Uuccch!
+- action: exit
+  actors: 
+  - Jules
+  - Vincent
