@@ -1,5 +1,5 @@
 function renderVoteData(vote) {
-    console.log('rendering vote', vote);
+    //console.log('rendering vote', vote);
     var skript = $('#skript-' + vote.id);
     skript.find('.vote-number').text(vote.votes);
     skript.find('.vote-bar').animate( { width: '' + (vote.votePercentage * 100) + '%'}, 300);
@@ -17,7 +17,7 @@ function renderVoteData(vote) {
 }
 
 function renderSkript(skript) {
-  console.log(skript);
+  //console.log(skript);
     $('#templates .skript').
         clone().
         attr('id', 'skript-' + skript.id).
@@ -62,7 +62,7 @@ function handleShowTimes(data) {
 }
 
 function handleCurrentShow(currentShow) {
-    console.log("current show", currentShow);
+    //console.log("current show", currentShow);
 
     if (currentShow.status == 'running') {
       $('#show')
@@ -79,7 +79,7 @@ function handleCurrentShow(currentShow) {
 
 function handleNextShow(time) {
     time = new Date(time);
-    console.log("Next show: ", time);
+    //console.log("Next show: ", time);
     $('#next-show').
         find('.countdown').removeClass('hasCountdown').html('').end().
         find('.countdown').countdown({
@@ -143,7 +143,7 @@ $(document).ready(function() {
     });
     document.socket.on('next show', function(show) {
         if (show) {
-            console.log('next show is', show)
+            //console.log('next show is', show)
             $('#next-show').
                 addClass('upcoming-show').removeClass('no-upcoming-show').
                 find('.next-show-title').text(show.title).end().
