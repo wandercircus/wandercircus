@@ -5,6 +5,7 @@
 
 	<title>Wandercircus</title>
 	<link rel="stylesheet" href="/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Kranky' rel='stylesheet' type='text/css'>
   <style type="text/css"> 
     @import "css/jquery.countdown.css";
     .countdown { width: 240px; height: 45px; }
@@ -17,26 +18,29 @@
   <h1><span class="fix-kerning">W</span>ande<span class="fix-kerning2">r</span>ci<span class="fix-kerning2">r</span>cus</h1>
 	</header>
   <div id="main" role="main">
+    <div id="show">
+      <h2>Current Show</h2>
+      <div class="current-show">
+        <div class="show-running">
+          <p>Show is running</p>
+          <span class="name"></span>
+        </div>
+        <div class="no-show">
+          <p>No Show</p>
+        </div>
+      </div>
+      <h2>Next Show</h2>
+      <div id="next-show">
+        <span class="time"></span>
+        <div class="countdown"></div>
+      </div>
+    </div>
     <div id="robocolown"></div>
-	  <h2>Available Plays</h2>
+    
+    <h2>Available Plays</h2>
 	  <ul id="skript-list">
 	  </ul>
-	  
-    <h2>Current Show</h2>
-    <div class="current-show">
-      <div class="show-running">
-        <p>Show is running</p>
-        <span class="name"></span>
-      </div>
-      <div class="no-show">
-        <p>No Show</p>
-      </div>
-    </div>
-    <h2>Next Show</h2>
-    <div id="next-show">
-      <span class="time"></span>
-      <div class="countdown"></div>
-    </div>
+
     <div id="about" class="lightbox">
       <h1>About</h1>
       <p>We are a flying circus company of sophisticated robots. Traveling and playing, this is our love. Every 15 minutes a new show starts on <a href="http://freenode.net/">freenode</a>. You can decide what we play next and where. Vote on the page and and wait for the next show to begin.</p>
@@ -76,6 +80,7 @@
     <p>
       <span class="show-info">
         <span class="title"></span>
+        by
         <span class="author"></span>
         <span class="channel"></span>
         <a class="vote">Vote Now</a>

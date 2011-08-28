@@ -42,6 +42,7 @@ function castVote(id) {
 
 function highlightVote(id) {
     $('#skript-' + id).addClass('voted-for');
+    $('#skript-list').addClass('vote-casted')
 }
 
 function handleShowTimes(data) {

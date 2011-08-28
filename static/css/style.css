@@ -201,6 +201,15 @@ table { border-collapse: collapse; border-spacing: 0; }
    Author: 
    ========================================================================== */
 
+h1 {
+  color: #402020;
+}
+
+h2 {
+  color: #402020;
+  font-family: 'Kranky', cursive;
+}
+
 li {
   list-style-type: none;
 }
@@ -233,9 +242,29 @@ li {
   user-select: none;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.vote-casted a {
+  display: none;
+}
+
+ul.vote-casted .voted-for a {
+  display: inline;
+  background-color: #FFFFFF;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.voted-for .show-info {
+  font-weight: bold;
+}
+
 .votes {
   position: absolute;
-  left: 600px;
+  left: 320px;
 }
 
 .vote-info-text {
@@ -246,16 +275,26 @@ li {
 
 .vote-bar-container {
   height: 20px;
-  width: 500px;
+  width: 600px;
   background: white;
   position: absolute;
   left: 85px;
 }
 
 .vote-bar {
-  height: 20px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 1px rgba(10,10,10,0.4);
+  height: 18px;
   width: 0px;
-  background: pink;
+  background-color: #FFF;
+  background-image: -webkit-linear-gradient(-45deg, #FAA 25%, transparent 25%, transparent 50%, #FAA 50%, #FAA 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(   -45deg, #FAA 25%, transparent 25%, transparent 50%, #FAA 50%, #FAA 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(    -45deg, #FAA 25%, transparent 25%, transparent 50%, #FAA 50%, #FAA 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(     -45deg, #FAA 25%, transparent 25%, transparent 50%, #FAA 50%, #FAA 75%, transparent 75%, transparent);
+  background-image: linear-gradient(        -45deg, #FAA 25%, transparent 25%, transparent 50%, #FAA 50%, #FAA 75%, transparent 75%, transparent);
+  -webkit-background-size: 50px 50px;
+  -moz-background-size: 50px 50px;
+  background-size: 50px 50px;
 }
 
 #templates { display: none; }
@@ -268,8 +307,31 @@ li {
   display: none;
 }
 
-.skript.voted-for {
-  font-weight: bold;;
+#show {
+  display: inline-block;
+  width: 500px;
+  min-height: 320px;
+  vertical-align: top;;
+}
+
+#robocolown {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  background: url('../img/roboclown.400.png') no-repeat 0px 0px;
+  -webkit-animation-name: dance;
+  -webkit-animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
 }
 
 
@@ -396,7 +458,7 @@ header h1 .fix-kerning2 {
     position:relative;
     width: 960px;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 20px;
     min-height: 530px;
 }
 
@@ -438,26 +500,6 @@ header h1 .fix-kerning2 {
     }
 
 }
-
-#robocolown {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    width: 504px;
-    height: 530px;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-    background: url('../img/roboclown.png') no-repeat 0px 0px;
-    -webkit-animation-name: dance;
-    -webkit-animation-duration: 15s;
-    -webkit-animation-iteration-count: infinite;
-    animation-direction: alternate;
-    -webkit-animation-timing-function: ease-in-out;
-}
-
 
 #lightbox-background {
     display: none;
