@@ -50,7 +50,9 @@ app.get('/api/skripts', function(req, res) {
 });
 
 app.post('/api/vote/:id', function(req, res) {
-    if (!skripts[req.params.id]) {
+    skript = skripts[req.params.id]
+
+    if (!skript) {
         res.send(404);
         return;
     }
@@ -61,7 +63,11 @@ app.post('/api/vote/:id', function(req, res) {
         return;
     }
 
-    skripts[req.params.id].votes += 1;
+    skript.votes += 1;
+    // todo: test channel via regex
+    if (!skript.channel && req.body && req.body.channel) {
+      skript.channel = req.body.channel
+    };
     utils.calculateVotePercentage(skripts);
     io.sockets.emit('votes', utils.stripForVotes(skripts));
 

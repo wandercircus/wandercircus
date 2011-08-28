@@ -201,6 +201,18 @@ table { border-collapse: collapse; border-spacing: 0; }
    Author: 
    ========================================================================== */
 
+.skript .channel > * {
+  display: none;
+}
+
+.skript .channel.choose input, .skript .channel.fixed span {
+  display: block;
+}
+
+.skript input.channel {
+  width: 100px;
+}
+
 .vote-bar-container {
   height: 20px;
   width: 500px;
