@@ -134,7 +134,7 @@ function nextShow() {
         skript = null;
     }
     if (winnerSkript) {
-        console.log("Starting scheduled show, winner is ", skript.title);
+        console.log("Starting scheduled show, winner is ", winnerSkript.title);
         var theater = theaters.irc.getTheater();
         // TODO pick channel
         currentShow.startShow(theater, winnerSkript, function() {
