@@ -3,7 +3,7 @@ var args = process.argv.slice(2),
     sys = require('sys'),
     jsdom = require('jsdom');
 
-var html = fs.readFileSync('hamlet.html').toString();
+var html = fs.readFileSync('html/hamlet.html').toString();
 
 
 var actors = {
