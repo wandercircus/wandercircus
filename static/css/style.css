@@ -224,12 +224,10 @@ li {
   display: none;
 }
 
-.skript .channel.choose input, .skript .channel.fixed span {
-  display: block;
-}
 
-.skript input.channel {
-  width: 100px;
+.skript input {
+    display: inline-block;
+    width: 100px;
 }
 
 .skript td {
