@@ -442,6 +442,7 @@ header h1 .fix-kerning2 {
 #robocolown {
     position: absolute;
     right: 0px;
+    bottom: 0px;
     width: 504px;
     height: 530px;
     -webkit-transition: all 1s ease-in-out;
