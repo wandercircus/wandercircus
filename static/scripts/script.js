@@ -38,7 +38,10 @@ function loadSkripts(skripts) {
 }
 
 function castVote(id) {
-    $.post('/api/vote/' + id, { channel: $('#skript-' + id + ' input').val() }, function(res) {
+    var input = $('#skript-' + id + ' input');
+    var span = $('<span>' + input.val() + '</span>');
+    input.replaceWith(span);
+    $.post('/api/vote/' + id, { channel: input.val() }, function(res) {
         highlightVote(id);
     });
 }
