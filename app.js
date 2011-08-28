@@ -131,12 +131,13 @@ function nextShow() {
             winnerSkript = skript;
             maxVotes = skript.votes;
         }
+        skript = null;
     }
     if (winnerSkript) {
         console.log("Starting scheduled show, winner is ", skript.title);
         var theater = theaters.irc.getTheater();
         // TODO pick channel
-        currentShow.startShow(theater, skript, function() {
+        currentShow.startShow(theater, winnerSkript, function() {
             resetVotes();
             scheduleShow(15);
         }, function doneClb() {
