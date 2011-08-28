@@ -1,5 +1,4 @@
-{
-"author": "William Shakespeare",
+{"author": "William Shakespeare",
 "title": "Hamlet",
  "setup": {
   "irc": {
@@ -9,52 +8,8 @@
   },
   "actors": [
    {
-    "id": "KingClaudius",
-    "name": "Claudius, King of Denmark."
-   },
-   {
-    "id": "Hamlet",
-    "name": "Hamlet, Son to the former, and Nephew to the present King."
-   },
-   {
-    "id": "Polonius",
-    "name": "Polonius, Lord Chamberlain."
-   },
-   {
     "id": "Horatio",
     "name": "Horatio, Friend to Hamlet."
-   },
-   {
-    "id": "Laertes",
-    "name": "Laertes, Son to Polonius."
-   },
-   {
-    "id": "Voltimand",
-    "name": "Voltimand, Courtier."
-   },
-   {
-    "id": "Cornelius",
-    "name": "Cornelius, Courtier."
-   },
-   {
-    "id": "Rosencrantz",
-    "name": "Rosencrantz, Courtier."
-   },
-   {
-    "id": "Guildenstern",
-    "name": "Guildenstern, Courtier."
-   },
-   {
-    "id": "Osric",
-    "name": "Osric, Courtier."
-   },
-   {
-    "id": "Gentleman",
-    "name": "Gentleman, Courtier."
-   },
-   {
-    "id": "Priest",
-    "name": "Priest."
    },
    {
     "id": "Marcellus",
@@ -69,44 +24,8 @@
     "name": "Francisco, a Soldier"
    },
    {
-    "id": "Reynaldo",
-    "name": "Reynaldo, Servant to Polonius."
-   },
-   {
-    "id": "Player",
-    "name": "Players."
-   },
-   {
-    "id": "Clown",
-    "name": "Clowns"
-   },
-   {
-    "id": "GraveDigger",
-    "name": "Grave-diggers."
-   },
-   {
-    "id": "Fortinbras",
-    "name": "Fortinbras, Prince of Norway."
-   },
-   {
-    "id": "Captain",
-    "name": "Captain."
-   },
-   {
-    "id": "Ambassador",
-    "name": "Ambassadors."
-   },
-   {
     "id": "Ghost",
     "name": "Ghost of Hamlet's Father."
-   },
-   {
-    "id": "Gertrude",
-    "name": "Gertrude, Queen of Denmark, and Mother of Hamlet."
-   },
-   {
-    "id": "Ophelia",
-    "name": "Ophelia, Daughter to Polonius."
    }
   ]
  },

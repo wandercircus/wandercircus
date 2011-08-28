@@ -17,6 +17,7 @@ function renderVoteData(vote) {
 }
 
 function renderSkript(skript) {
+  console.log(skript);
     $('#templates .skript').
         clone().
         attr('id', 'skript-' + skript.id).
@@ -37,7 +38,10 @@ function loadSkripts(skripts) {
 }
 
 function castVote(id) {
-    $.post('/api/vote/' + id, { channel: $('#skript-' + id + ' input').val() }, function(res) {
+    var input = $('#skript-' + id + ' input');
+    var span = $('<span>' + input.val() + '</span>');
+    input.replaceWith(span);
+    $.post('/api/vote/' + id, { channel: input.val() }, function(res) {
         highlightVote(id);
     });
 }
@@ -64,7 +68,8 @@ function handleCurrentShow(currentShow) {
       $('#show')
         .removeClass('stopped').addClass('running')
         .find('.current-show')
-        .find('.name').html(currentShow.skript.title).end();
+        .find('.name').html(currentShow.skript.title).end()
+        .find('.channel').text(currentShow.skript.channel).end();
     } else {
       $('#show').removeClass('running').addClass('stopped');
     }
@@ -87,11 +92,13 @@ function handleNextShow(time) {
 
 var openLightBox = function(openId){
     var box = $(openId);
-    var channel = $('.current-show .channel').text();
-    if (!box.hasClass('running') || (box.hasClass('running') && box.attr('channel') != channel)) {
-      box.html('<iframe src="http://webchat.freenode.net?nick=onlooker-.&channels=' + channel + '&uio=MT1mYWxzZSY3PWZhbHNlJjk9dHJ1ZSYxMT0yMQ7f" width="647" height="400"></iframe>');
-      box.addClass('running');
-      box.attr('channel', channel);
+    if (openId == '#irc') {
+      var channel = $('.current-show .channel').text().slice(1);
+      if (!box.hasClass('running') || (box.hasClass('running') && box.attr('channel') != channel)) {
+        box.html('<iframe src="http://webchat.freenode.net?nick=onlooker-.&channels=' + channel + '&uio=MT1mYWxzZSY3PWZhbHNlJjk9dHJ1ZSYxMT0yMQ7f" width="647" height="400"></iframe>');
+        box.addClass('running');
+        box.attr('channel', channel);
+      };
     };
     box.fadeIn();
     box.css({
@@ -141,7 +148,7 @@ $(document).ready(function() {
         highlightVote(id);
         var hasVoted = id !== null;
         if (!hasVoted) {
-            $('span.channel').click(function() {
+            $('#skript-list span.channel').click(function() {
                var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
                $(this).replaceWith(input);
                input.focus();
