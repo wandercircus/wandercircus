@@ -21,6 +21,7 @@
 <div id="container">
 	<header>
   <h1><span class="fix-kerning">W</span>ande<span class="fix-kerning2">r</span>c<span class="highlight">i</span><span class="highlight fix-kerning2">r</span><span class="highlight">c</span>us</h1>
+  <div class="border">☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆</div>
 	</header>
   <div id="main" role="main">
     <div id="show">
@@ -37,9 +38,25 @@
     <div id="robocolown"></div>
     
     <h2>Available Plays</h2>
-	  <ul id="skript-list" class="vote-casted">
-	  </ul>
 
+	  <table id="skript-list" class="vote-casted">
+	  </table>
+	  	  
+	  <footer>
+	    <div class="border">☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆&middot;☆</div>
+	    <ul>
+	      <li><a href="#irc" class="open-lightbox">IRC</a></li>
+        <li><a href="#about" class="open-lightbox">About</a></li>
+        <li>
+          <div class="box">
+            <a href="http://www.flickr.com/photos/71842483@N00/593512292/">Pagliaccibot</a><br>
+            by <a href="http://www.flickr.com/photos/joealterio/">JoeAlterio</a><br>
+            <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" rel="license">CC-BY-NC-ND 2.0</a><br>
+          </div>
+        </li>
+      </ul>
+  	</footer>
+  	
     <div id="about" class="lightbox">
       <h1>About</h1>
       <p>We are a flying circus company of sophisticated robots. Traveling and playing, this is our love. Every 15 minutes a new show starts on <a href="http://freenode.net/">freenode</a>. You can decide what we play next and where. Vote on the page and and wait for the next show to begin.</p>
@@ -67,35 +84,37 @@
     </div>
 
   </div>
-  <footer>
-  <a href="#irc" class="open-lightbox">IRC</a><br/>
-  <a href="#about" class="open-lightbox">About</a><br/>
-  <a href="http://www.flickr.com/photos/71842483@N00/593512292/">Pagliaccibot</a> by <a href="http://www.flickr.com/photos/joealterio/">JoeAlterio</a> (<a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" rel="license">CC-BY-NC-ND 2.0</a>)
-	</footer>
+
 </div> <!--! end of #container -->
 
 <div id="templates" class="template-container">
-  <li class="skript">
-    <p>
-      <span class="show-info">
-        <span class="title"></span>
-        by
-        <span class="author"></span>
-        in
-        <span class="channel"></span>
+  <table>
+    <tr class="skript">
+      <td class="show-info">
+          <span class="title"></span>
+          by
+          <span class="author"></span>
+          in
+          <span class="channel"></span>
+      </td>
+      <td>
         <a class="vote">Vote!</a>
-      </span>
-      <span class="votes">
-        <span class="vote-info-text">
-          <span class="vote-number"></span>
-          <span>Votes</span>
+      </td>
+      <td>
+        <span class="votes">
+          <span class="vote-info-text">
+            <span class="vote-number"></span>
+            <span>Votes</span>
+          </span>
         </span>
-        <span class="vote-bar-container">
-          <span class="vote-bar"></div>
-        </span>
-      </span>
-    </p>
-  </li>
+      </td>
+      <td>
+        <div class="vote-bar-container">
+          <div class="vote-bar"></div>
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>
 
 <div id="lightbox-background"></div>

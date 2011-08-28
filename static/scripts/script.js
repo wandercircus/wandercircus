@@ -1,26 +1,27 @@
 function renderVoteData(vote) {
-    console.log('rendering vote', vote)
+    console.log('rendering vote', vote);
     var skript = $('#skript-' + vote.id);
-    skript.find('.vote-number').html(vote.votes);
+    skript.find('.vote-number').text(vote.votes);
     skript.find('.vote-bar').animate( { width: '' + (vote.votePercentage * 100) + '%'}, 300);
     if (vote.channel) {
       skript
-        .find('span.channel').html(vote.channel)
+        .find('.channel').text(vote.channel)
         .removeClass('choose').addClass('fixed');
     } else {
-        var channel = skript.find('span.channel');
-        if (vote.setup)
+        var channel = skript.find('.channel');
+        if (vote.setup){
             channel.html(vote.setup.irc.channel);
+        }
         channel.removeClass('fixed').addClass('choose');
-    };
+    }
 }
 
 function renderSkript(skript) {
     $('#templates .skript').
         clone().
         attr('id', 'skript-' + skript.id).
-        find('.title').html(skript.title).end().
-        find('.author').html(skript.author).end().
+        find('.title').text(skript.title).end().
+        find('.author').text(skript.author).end().
         find('.vote').click(function() {
             castVote(skript.id);
         }).end().
@@ -122,7 +123,7 @@ $(document).ready(function() {
     });
     document.socket.on('my vote', function(id) {
         highlightVote(id);
-        var hasVoted = id != null;
+        var hasVoted = id !== null;
         if (!hasVoted) {
             $('span.channel').click(function() {
                var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
