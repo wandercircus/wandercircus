@@ -62,6 +62,7 @@ function handleCurrentShow(data) {
     }
 }
 
+
 function handleNextShow(time) {
     // TODO implement
     time = new Date(time);
@@ -71,7 +72,27 @@ function handleNextShow(time) {
         find('.countdown').countdown({'until': time});
 }
 
+var openLightBox = function(openId){
+    var box = $(openId);
+    box.fadeIn();
+    box.css({
+        'margin-top' : -(box.height() + 80) / 2,
+        'margin-left' : -(box.width() + 80) / 2
+    });
+    $('#lightbox-background').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
+    var closeLightBox = function(){
+        $("body").css({"overflow": "auto"});
+        $('#lightbox-background, .lightbox').fadeOut();
+    };
+    $('#lightbox-background').live('click', closeLightBox);
+    $('.lightbox a.close').live('click', closeLightBox);
+    $("body").css({"overflow": "hidden"});
+};
+
 $(document).ready(function() {
+    $(".open-lightbox").click(function(e){
+        openLightBox($(this).attr("href"));
+    });
     $.getJSON('/api/skripts', function(skripts) {
       loadSkripts(skripts);
     });
