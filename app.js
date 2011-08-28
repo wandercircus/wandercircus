@@ -10,11 +10,23 @@ var path    = require('path'),
 
 
 io.configure('production', function(){
+    io.set('transports', [
+    , 'xhr-polling'
+    , 'jsonp-polling'
+    , 'flashsocket'
+    , 'htmlfile'
+    ]);
     io.enable('browser client minification');  // send minified client
     io.enable('browser client etag');          // apply etag caching logic based on version number
     io.set('log level', 1);
 });
 io.configure('development', function(){
+    io.set('transports', [
+    , 'xhr-polling'
+    , 'jsonp-polling'
+    , 'flashsocket'
+    , 'htmlfile'
+    ]);
     io.set('log level', 2);
 });
 
