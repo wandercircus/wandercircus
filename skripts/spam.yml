@@ -1,0 +1,150 @@
+author: Monty Python
+title: Spam
+setup:
+  actors:
+  - id: Man
+    name: Man
+  - id: Wife
+    name: Wife
+  - id: Waitress
+    name: Waitress
+  - id: Vikings
+    name: Vikings
+  irc:
+    channel: "#mpspam"
+    prefix: mpspam|
+    server: irc.freenode.org
+skript:
+- action: announcement
+  content: We are sitting in a nice cafe.
+- action: enter
+  actors:
+  - Waitress
+- action: announcement
+  content: One table is occupied by a group of Vikings wearing horned helmets.
+- action: enter
+  actors:
+  - Vikings
+- action: announcement
+  content: A man and his wife enter.
+- action: enter
+  actors:
+  - Man
+  - Wife
+- action: speak
+  actor: Wife
+  line: All right.
+- action: speak
+  actor: Man
+  line: Morning!
+- action: speak
+  actor: Waitress
+  line: Morning!
+- action: speak
+  actor: Man
+  line: Well, what've you got?
+- action: speak
+  actor: Waitress
+  line: Well, there's egg and bacon; egg sausage and bacon; egg and spam; egg bacon and spam; egg bacon sausage and spam; spam bacon sausage and spam; spam egg spam spam bacon and spam; spam sausage spam spam bacon spam tomato and spam;
+- action: perform
+  actor: Vikings
+  what: sing and chant
+- action: speak
+  actor: Vikings
+  line: Spam spam spam spam...
+- action: speak
+  actor: Waitress
+  line: ...spam spam spam egg and spam; spam spam spam spam spam spam baked beans spam spam spam...
+- action: perform
+  actor: Vikings
+  what: sing and chant
+- action: speak
+  actor: Vikings
+  line: Spam! Lovely spam! Lovely spam!
+- action: speak
+  actor: Waitress
+  line: ...or Lobster Thermidor a Crevette with a mornay sauce served in a Provencale manner with shallots and aubergines garnished with truffle pate, brandy and with a fried egg on top and spam.
+- action: speak
+  actor: Wife
+  line: Have you got anything without spam?
+- action: speak
+  actor: Waitress
+  line: Well, there's spam egg sausage and spam, that's not got much spam in it.
+- action: speak
+  actor: Wife
+  line: I don't want ANY spam!
+- action: speak
+  actor: Man
+  line: Why can't she have egg bacon spam and sausage?
+- action: speak
+  actor: Wife
+  line: THAT'S got spam in it!
+- action: speak
+  actor: Man
+  line: Hasn't got as much spam in it as spam egg sausage and spam, has it?
+- action: perform
+  actor: Vikings
+  what: sing and chant
+- action: speak
+  actor: Vikings
+  line: Spam spam spam spam...
+- action: speak
+  actor: Wife
+  line: Could you do the egg bacon spam and sausage without the spam then?
+- action: speak
+  actor: Waitress
+  line: Urgghh!
+- action: speak
+  actor: Wife
+  line: What do you mean 'Urgghh'? I don't like spam!
+- action: perform
+  actor: Vikings
+  what: sing and chant
+- action: speak
+  actor: Vikings
+  line: Lovely spam! Wonderful spam!
+- action: speak
+  actor: Waitress
+  line: Shut up!
+- action: perform
+  actor: Vikings
+  what: sing and chant
+- action: speak
+  actor: Vikings
+  line: Lovely spam! Wonderful spam!
+- action: speak
+  actor: Waitress
+  line: Shut up!
+- action: perform
+  actor: Vikings
+  what: stop singing and chanting
+- action: speak
+  actor: Waitress
+  line: Bloody Vikings! You can't have egg bacon spam and sausage without the spam.
+- action: speak
+  actor: Wife
+  line: I don't like spam!
+- action: speak
+  actor: Man
+  line: Sshh, dear, don't cause a fuss. I'll have your spam. I love it. I'm having spam spam spam spam spam spam spam beaked beans spam spam spam and spam!
+- action: perform
+  actor: Vikings
+  what: sing and chant
+- action: speak
+  actor: Vikings
+  line: Spam spam spam spam. Lovely spam! Wonderful spam!
+- action: speak
+  actor: Waitress
+  line: Shut up!! Baked beans are off.
+- action: speak
+  actor: Man
+  line: Well could I have her spam instead of the baked beans then?
+- action: speak
+  actor: Waitress
+  line: You mean spam spam spam spam spam spam ...
+- action: perform
+  actor: Vikings
+  what: sing and chant
+- action: speak
+  actor: Vikings
+  line: Spam spam spam spam. Lovely spam! Wonderful spam! Spam spa-a-a-a-a-am spam spa-a-a-a-a-am spam. Lovely spam! Lovely spam! Lovely spam! Lovely spam! Lovely spam! Spam spam spam spam!
