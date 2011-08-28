@@ -279,7 +279,7 @@ ul.vote-casted .voted-for a {
 
 .vote-bar-container {
   height: 20px;
-  width: 600px;
+  width: 550px;
   background: white;
   position: absolute;
   left: 85px;
@@ -324,7 +324,7 @@ ul.vote-casted .voted-for a {
 #robocolown {
   display: block;
   position: absolute;
-  right: 0;
+  right: 85px;
   top: 0;
   width: 400px;
   height: 400px;
