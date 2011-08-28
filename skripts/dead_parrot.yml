@@ -13,7 +13,7 @@ setup:
     server: irc.freenode.org
 skript:
 - action: announcement
-  content: "[We are in a classical british pet shop. Goldfishes swim in their tanks, Golden Retrivers lick their own balld in their cages and a ton of cat food is stacked in one corner of the room. It's mid-day, the slow part.]"
+  content: "[We are in a classical british pet shop. Goldfishes swim in their tanks, Golden Retrivers lick their balls in the cages and a ton of cat food is stacked in a corner of the room. It's mid-day, the slow part.]"
 - action: enter
   actors:
   - Owner

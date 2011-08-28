@@ -74,7 +74,7 @@ app.get('/api/theatres', function(req, res) {
 });
 
 app.get('/api/skripts', function(req, res) {
-  res.send(JSON.stringify(utils.stripSkripts(skripts)));
+  res.send(JSON.stringify(utils.massageSkripts(skripts)));
 });
 
 app.post('/api/vote/:id', function(req, res) {
@@ -92,8 +92,8 @@ app.post('/api/vote/:id', function(req, res) {
 
     skript.votes += 1;
     // todo: test channel via regex
-    if (!skript.channel && req.body && req.body.channel) {
-      skript.channel = req.body.channel;
+    if (!skript.nextShowChannel && req.body && req.body.channel) {
+      skript.nextShowChannel = req.body.channel;
     }
     utils.calculateVotePercentage(skripts);
     emitVotes(io.sockets);
@@ -192,6 +192,7 @@ function resetVotes() {
     for (var id in skripts) {
         skripts[id].votes = 0;
         skripts[id].votePercentage = 0;
+        skripts[id].nextShowChannel = null;
     }
     sessionStore.clear(function() {
         io.sockets.emit("my vote", null);
@@ -208,9 +209,15 @@ if (args.length > 0){
         console.log("Cut to", args[1]);
         play.skript = play.skript.slice(parseInt( args[1] || 0, 10));
     }
-    theater.setup(play.setup, function(){
-        theater.run(play.skript);
-    }, function() {
-        console.log("Done callback: skript finished.")
-    });
+
+    if (play) {
+      currentShow.startShow(theater, play, function(){
+          theater.run(play.skript);
+      }, function() {
+          console.log("Done callback: skript finished.")
+      });
+    } else {
+      console.log("Skript " + args[0] + " does not exist");
+      process.exit();
+    }
 }
