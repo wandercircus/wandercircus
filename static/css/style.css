@@ -313,7 +313,7 @@ footer {
 }
 
 footer .border {
-  margin: 100px 0 0 0;
+  margin: 20px 0 0 0;
   padding: 10px;
 }
 
@@ -331,33 +331,13 @@ footer .border {
   letter-spacing: 0;
 }
 
-footer li {
-  display: inline;
-  font-size: 40px;
-  padding: 0 40px 0 32px;
-}
-
-footer li:last-of-type {
-  border-right: none;
-  font-size: 10px;
-  white-space: normal;
-}
-
-footer li:last-of-type .box {
-  position: relative;
-  display: inline-block;  
-}
-footer li:last-of-type a, footer li:last-of-type a {
-  font-family: sans-serif;
-}
-
-footer a , footer a:visited {
+.border a , .border a:visited {
   font-family: 'JFRingmasterRegular' Georgia serif;
-  color: #402020;
+  color: #DD646E;
   text-decoration: none
 }
 
-footer a:hover {
+.border a:hover {
   color: rgba(64,32,32, 0.7);
 }
 
@@ -643,3 +623,7 @@ header h1 .fix-kerning2 {
     margin-bottom: 5px;
 }
 
+#about.lightbox a {
+    color: #99454C;
+    text-decoration: none;
+}
