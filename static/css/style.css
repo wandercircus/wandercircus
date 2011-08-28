@@ -211,10 +211,6 @@ h1 {
   color: #402020;
 }
 
-.highlight {
-    color: #DD646E;
-}
-
 h2 {
   color: #402020;
   font-family: 'Kranky', cursive;
@@ -305,26 +301,6 @@ ul {
   width: 500px;
   min-height: 320px;
   vertical-align: top;;
-}
-
-#robocolown {
-  display: block;
-  position: absolute;
-  right: 85px;
-  top: 0;
-  width: 400px;
-  height: 400px;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  background: url('../img/roboclown.400.png') no-repeat 0px 0px;
-  -webkit-animation-name: dance;
-  -webkit-animation-duration: 15s;
-  -webkit-animation-iteration-count: infinite;
-  animation-direction: alternate;
-  -webkit-animation-timing-function: ease-in-out;
 }
 
 footer {
@@ -508,42 +484,89 @@ header h1 .fix-kerning2 {
 }
 
 @-webkit-keyframes dance {
-    88% {
+    20% {
         -moz-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    90% {
+    22% {
         -moz-transform: rotate(60deg);
         -webkit-transform: rotate(60deg);
         transform: rotate(60deg);
     }
-    92% {
+    24% {
         -moz-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    94% {
+    26% {
         -moz-transform: rotate(60deg);
         -webkit-transform: rotate(60deg);
         transform: rotate(60deg);
     }
-    96% {
+    28% {
         -moz-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    98% {
+    30% {
         -moz-transform: rotate(60deg);
         -webkit-transform: rotate(60deg);
         transform: rotate(60deg);
+    }
+    32% {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+#robocolown {
+  display: block;
+  position: absolute;
+  right: 85px;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  background: url('../img/roboclown.400.png') no-repeat 0px 0px;
+  -webkit-animation-name: dance;
+  -webkit-animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes highlight {
+    0% {
+      color: #402020;
+    }
+    20% {
+        color: #DD646E;
+    }
+    80% {
+      color: #DD646E;
     }
     100% {
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+      color: #402020;
     }
+}
 
+.highlight {
+    -webkit-transition: color 1s ease-in-out;
+    -moz-transition: color 1s ease-in-out;
+    -o-transition: color 1s ease-in-out;
+    -ms-transition: color 1s ease-in-out;
+    transition: color 1s ease-in-out;
+    -webkit-animation-name: highlight;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
 }
 
 #lightbox-background {
