@@ -210,5 +210,7 @@ if (args.length > 0){
     }
     theater.setup(play.setup, function(){
         theater.run(play.skript);
+    }, function() {
+        console.log("Done callback: skript finished.")
     });
 }
