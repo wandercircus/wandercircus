@@ -2,10 +2,19 @@ function renderVoteData(vote) {
     var skript = $('#skript-' + vote.id);
     skript.find('.vote-number').html(vote.votes);
     skript.find('.vote-bar').animate( { width: (500 * vote.votePercentage) + 'px'}, 300);
+    if (vote.channel) {
+      skript
+        .find('span.channel')
+        .find('span').html('#' + vote.channel).end()
+        .removeClass('choose').addClass('fixed');
+    } else {
+      skript
+        .find('span.channel')
+        .removeClass('fixed').addClass('choose');
+    };
 }
 
 function renderSkript(skript) {
-  console.log(skript);
     $('#templates .skript').
         clone().
         attr('id', 'skript-' + skript.id).
@@ -26,7 +35,7 @@ function loadSkripts(skripts) {
 }
 
 function castVote(id) {
-    jQuery.post('/api/vote/' + id, function(res) {
+    $.post('/api/vote/' + id, { channel: $('#skript-' + id + ' .channel input').val() }, function(res) {
         highlightVote(id);
     });
 }
@@ -64,7 +73,6 @@ function handleNextShow(time) {
 
 $(document).ready(function() {
     $.getJSON('/api/skripts', function(skripts) {
-      console.log(skripts);
       loadSkripts(skripts);
     });
 
