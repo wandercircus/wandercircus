@@ -51,22 +51,20 @@ function highlightVote(id) {
 }
 
 function handleShowTimes(data) {
-    if (data.current.status && data.current.status == 'stopped') {
-        handleNextShow(data.next);
-    } else {
-        handleCurrentShow(data.current);
-    }
+    handleNextShow(data.next);
+    handleCurrentShow(data.current);
 }
 
 function handleCurrentShow(currentShow) {
     console.log("current show", currentShow);
 
     if (currentShow.status == 'running') {
-      $('.current-show')
-        .find('.name').html(currentShow.skript.title).end()
-        .removeClass('stopped').addClass('running');
+      $('#show')
+        .removeClass('stopped').addClass('running')
+        .find('.current-show')
+        .find('.name').html(currentShow.skript.title).end();
     } else {
-      $('.current-show').removeClass('running').addClass('stopped');
+      $('#show').removeClass('running').addClass('stopped');
     }
 }
 
@@ -74,7 +72,7 @@ function handleCurrentShow(currentShow) {
 function handleNextShow(time) {
     time = new Date(time);
     console.log("Next show: ", time);
-    $('#next-show').
+    $('.next-show').
         find('.time').html(time.toLocaleString()).end().
         find('.countdown').removeClass('hasCountdown').html('').end().
         find('.countdown').countdown({'until': time});
