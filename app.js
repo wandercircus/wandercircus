@@ -158,8 +158,8 @@ function nextShow() {
         console.log("Starting scheduled show, winner is ", winnerSkript.title);
         var theater = theaters.irc.getTheater();
         currentShow.startShow(theater, winnerSkript, function() {
-            resetVotes();
             scheduleShow(15);
+            resetVotes();
         }, function doneClb() {
             emitShowTimes(io.sockets);
         });
