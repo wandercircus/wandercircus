@@ -1,8 +1,9 @@
 {
  "setup": {
-  "author": "Shakespeare",
+  "author": "William Shakespeare",
+  "title": "Hamlet",
   "irc": {
-   "server": "irc.mysociety.org",
+   "server": "irc.freenode.org",
    "channel": "#nodespeare",
    "prefix": "hamlet|"
   },
