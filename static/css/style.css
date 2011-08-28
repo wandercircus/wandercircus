@@ -257,7 +257,7 @@ ul {
   padding: 0;
 }
 
-ul.vote-casted a {
+.vote-casted a {
   display: none;
 }
 
