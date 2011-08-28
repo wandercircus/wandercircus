@@ -11,6 +11,7 @@ var path    = require('path'),
 
 io.configure('production', function(){
     io.set('transports', [
+    , 'websocket'
     , 'xhr-polling'
     , 'jsonp-polling'
     , 'flashsocket'
@@ -22,6 +23,7 @@ io.configure('production', function(){
 });
 io.configure('development', function(){
     io.set('transports', [
+    , 'websocket'
     , 'xhr-polling'
     , 'jsonp-polling'
     , 'flashsocket'
