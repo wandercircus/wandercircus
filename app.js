@@ -78,7 +78,6 @@ app.listen(config.port, config.host);
 
 io.sockets.on('connection', function(socket) {
     socket.emit('current show', currentShow.toJSON());
-    socket.emit('skripts', skripts);
     var voteId = getVoteId(socket.request);
     if (voteId)
         socket.emit('my vote', voteId);

@@ -1,12 +1,11 @@
-function loadSkripts(skripts) {
-    console.log(skripts);
-    $.each(skripts, function(id, skript) {
-        showSkript(skript);
-    });
+function renderVoteData(vote) {
+    var skript = $('#skript-' + vote.id);
+    skript.find('.vote-number').html(vote.votes);
+    skript.find('.vote-bar').animate( { width: (500 * vote.votePercentage) + 'px'}, 300);
 }
 
-function showSkript(skript) {
-    console.log(skript);
+function renderSkript(skript) {
+  console.log(skript);
     $('#templates .skript').
         clone().
         attr('id', 'skript-' + skript.id).
@@ -16,6 +15,14 @@ function showSkript(skript) {
             castVote(skript.id);
         }).end().
         appendTo('#skript-list');
+
+    renderVoteData(skript);
+}
+
+function loadSkripts(skripts) {
+    $.each(skripts, function(id, skript) {
+        renderSkript(skript);
+    });
 }
 
 function castVote(id) {
@@ -42,17 +49,16 @@ function handleCurrentShow(data) {
 }
 
 $(document).ready(function() {
-    document.socket = io.connect('/');
-    document.socket.on('skripts', function(skripts) {
+    $.getJSON('/api/skripts', function(skripts) {
+      console.log(skripts);
       loadSkripts(skripts);
     });
+
+    document.socket = io.connect('/');
     document.socket.on('current show', handleCurrentShow);
     document.socket.on('votes', function(votes) {
         $.each(votes, function(id, vote) {
-            var skript = $('#skript-' + vote.id);
-            console.log(skript);
-            skript.find('.vote-number').html(vote.votes);
-            skript.find('.vote-bar').css('width', (500 * vote.votePercentage) + 'px');
+            renderVoteData(vote);
         });
     });
     document.socket.on('my vote', function(id) {
