@@ -299,6 +299,9 @@ ul.vote-casted .voted-for a {
 
 #templates { display: none; }
 
+#show, .current-show, .next-show { display: none; }
+#show.running .current-show, #show.stopped .next-show { display: block; }
+
 .current-show.running .show-running, .current-show.stopped .no-show{
   display: block;
 }

@@ -46,13 +46,15 @@ function highlightVote(id) {
 }
 
 function handleShowTimes(data) {
-    handleCurrentShow(data.current);
-    handleNextShow(data.next);
+    if (data.current.status && data.current.status == 'stopped') {
+        handleNextShow(data.next);
+    } else {
+        handleCurrentShow(data.current);
+    }
 }
 
-function handleCurrentShow(data) {
-    console.log("current show: " + data);
-    var currentShow = JSON.parse(data);
+function handleCurrentShow(currentShow) {
+    console.log("current show", currentShow);
 
     if (currentShow.status == 'running') {
       $('.current-show')
@@ -65,7 +67,6 @@ function handleCurrentShow(data) {
 
 
 function handleNextShow(time) {
-    // TODO implement
     time = new Date(time);
     console.log("Next show: ", time);
     $('#next-show').

@@ -44,6 +44,11 @@ app.configure(function(){
 app.configure('development', function() {
     app.use(express.static(__dirname + '/static'));
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+    
+    app.get('/__trigger__', function(req, res) {
+      nextShow();
+      res.send("");
+    });
 });
 
 app.configure('production', function() {
@@ -129,23 +134,29 @@ function nextShow() {
         // TODO pick channel
         currentShow.startShow(theater, skript, function() {
             resetVotes();
-            scheduleShow();
+            scheduleShow(15);
         }, function doneClb() {
             emitShowTimes(io.sockets);
         });
     } else {
         console.log("No votes, no show.");
-        scheduleShow();
+        scheduleShow(15);
     }
 }
 
-function scheduleShow() {
+function scheduleShow(timeDelay) {
     clearTimeout(showTimeout);
-    nextShowTime = new Date();
-    nextQuarterH = nextShowTime.getMinutes();
-    nextQuarterH -= (nextQuarterH % 15) - 15;
-    nextShowTime.setMinutes(nextQuarterH);
-    nextShowTime.setSeconds(0); nextShowTime.setMilliseconds(0);
+    if (timeDelay && nextShowTime) {
+        // Schedule timeDelay minutes later than currently
+        nextShowTime.setMinutes(nextShowTime.getMinutes() + 15);
+    } else {
+        // Schedule to the next full 15 minutes
+        nextShowTime = new Date();
+        nextQuarterH = nextShowTime.getMinutes();
+        nextQuarterH -= (nextQuarterH % 15) - 15;
+        nextShowTime.setMinutes(nextQuarterH);
+        nextShowTime.setSeconds(0); nextShowTime.setMilliseconds(0);
+    }
     showTimeout = setTimeout(nextShow, Math.max(nextShowTime - Date.now(), 0));
     console.log("Scheduled show for ", new Date(nextShowTime));
     emitShowTimes(io.sockets);
@@ -155,7 +166,7 @@ scheduleShow();
 
 function emitShowTimes(socket) {
     socket.emit('show times', {
-        'current': currentShow.toJSON(), 
+        'current': currentShow.export(), 
         'next': nextShowTime
     });
 }
