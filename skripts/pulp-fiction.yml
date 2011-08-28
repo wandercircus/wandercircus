@@ -28,13 +28,22 @@ skript:
   line: Well, hash is legal there, right?
 - action: speak
   actor: Vincent
-  line: Yeah, it's legal, but is ain't a hundred percent legal. I mean you can't walk into a restaurant, roll a joint, and start puffin' away. You're only supposed to smoke in your home or certain designated places.
+  line: Yeah, it's legal, but is ain't a hundred percent legal."
+- action: speak
+  actor: Vincent
+  line: "I mean you can't walk into a restaurant, roll a joint, and start puffin' away. You're only supposed to smoke in your home or certain designated places.
 - action: speak
   actor: Jules
   line: Those are hash bars?
 - action: speak
   actor: Vincent
-  line: "Yeah, it breaks down like this: it's legal to buy it, it's legal to own it and, if you're the proprietor of a hash bar, it's legal to sell it. It's legal to carry it, which doesn't really matter 'cause -- get a load of this -- if the cops stop you, it's illegal for this to search you. Searching you is a right that the cops in Amsterdam don't have."
+  line: "Yeah, it breaks down like this: it's legal to buy it, it's legal to own it and, if you're the proprietor of a hash bar, it's legal to sell it."
+- action: speak
+  actor: Vincent
+  line: "It's legal to carry it, which doesn't really matter 'cause -- get a load of this -- if the cops stop you, it's illegal for this to search you."
+- action: speak
+  actor: Vincent
+  line: "Searching you is a right that the cops in Amsterdam don't have."
 - action: speak
   actor: Jules
   line: That did it, man -- I'm fuckin' goin', that's all there is to it.
@@ -52,7 +61,13 @@ skript:
   line: Examples?
 - action: speak
   actor: Vincent
-  line: Well, in Amsterdam, you can buy beer in a movie theatre. And I don't mean in a paper cup either. They give you a glass of beer, like in a bar. In Paris, you can buy beer at MacDonald's. Also, you know what they call a Quarter Pounder with Cheese in Paris?
+  line: Well, in Amsterdam, you can buy beer in a movie theatre.
+- action: speak
+  actor: Vincent
+  line: And I don't mean in a paper cup either. They give you a glass of beer, like in a bar. In Paris, you can buy beer at MacDonald's. 
+- action: speak
+  actor: Vincent
+  line: Also, you know what they call a Quarter Pounder with Cheese in Paris?
 - action: speak
   actor: Jules
   line: They don't call it a Quarter Pounder with Cheese?
