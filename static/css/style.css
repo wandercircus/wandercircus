@@ -201,6 +201,10 @@ table { border-collapse: collapse; border-spacing: 0; }
    Author: 
    ========================================================================== */
 
+li {
+  list-style-type: none;
+}
+
 .skript .channel > * {
   display: none;
 }
@@ -213,10 +217,39 @@ table { border-collapse: collapse; border-spacing: 0; }
   width: 100px;
 }
 
+.skript p {
+  margin: 10px;
+}
+
+.skript a {
+  padding: 2px 5px 2px 5px;
+  background-color: #ff646e;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px #F22;
+  cursor: pointer;
+  user-select: none;
+}
+
+.votes {
+  position: absolute;
+  left: 600px;
+}
+
+.vote-info-text {
+  text-align: right;
+  width: 80px;
+  position: absolute;
+}
+
 .vote-bar-container {
   height: 20px;
   width: 500px;
   background: white;
+  position: absolute;
+  left: 85px;
 }
 
 .vote-bar {

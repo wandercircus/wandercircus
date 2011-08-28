@@ -1,7 +1,7 @@
 function renderVoteData(vote) {
     var skript = $('#skript-' + vote.id);
     skript.find('.vote-number').html(vote.votes);
-    skript.find('.vote-bar').animate( { width: (500 * vote.votePercentage) + 'px'}, 300);
+    skript.find('.vote-bar').animate( { width: '' + (vote.votePercentage * 100) + '%'}, 300);
     if (vote.channel) {
       skript
         .find('span.channel')
