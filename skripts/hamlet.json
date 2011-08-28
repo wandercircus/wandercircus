@@ -533,12 +533,6 @@
    "i": 83
   },
   {
-   "action": "speak",
-   "actor": "Horatio",
-   "line": "As thou art to thyself:",
-   "i": 84
-  },
-  {
    "action": "announcement",
    "content": "Full Hamlet available on request: @wandercircus",
    "i": 207
