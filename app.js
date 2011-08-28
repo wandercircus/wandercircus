@@ -8,8 +8,16 @@ var path    = require('path'),
     app     = express.createServer(),
     io      = require('socket.io').listen(app);
 
-io.enable('browser client minification');  // send minified client
-io.enable('browser client etag');          // apply etag caching logic based on version number
+
+io.configure('production', function(){
+    io.enable('browser client minification');  // send minified client
+    io.enable('browser client etag');          // apply etag caching logic based on version number
+    io.set('log level', 1);
+});
+io.configure('development', function(){
+    io.set('log level', 2);
+});
+
 
 var config      = require('./config.js'),
     utils       = require('./lib/utils.js'),
@@ -84,7 +92,7 @@ function getVoteId(request, cb) {
     var sid = parsedCookies['connect.sid'];
     if (sid) {
       sessionStore.get(sid, function (error, session) {
-        cb(session.voteId);
+        session && cb(session.voteId);
       });
     }
 }
