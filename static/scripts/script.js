@@ -111,7 +111,10 @@ var openLightBox = function(openId){
         $("body").css({"overflow": "auto"});
         $('#lightbox-background, .lightbox').fadeOut();
     };
-    $('#lightbox-background').live('click', closeLightBox);
+    $('#lightbox-background').live('click', function(e){
+        e.preventDefault();
+        closeLightBox();
+    });
     $('.lightbox a.close').live('click', closeLightBox);
     $("body").css({"overflow": "hidden"});
 };
