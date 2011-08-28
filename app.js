@@ -15,7 +15,8 @@ var config      = require('./config.js'),
     utils       = require('./lib/utils.js'),
     currentShow = require('./lib/show.js'),
     skripts     = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
-    votes       = {};
+    votes       = {},
+    SHOW_INTERVAL = config.showInterval;
 
 var args = process.argv.slice(2);
 
@@ -82,11 +83,58 @@ app.get('/', function(req, res) {
 app.listen(config.port, config.host);
 
 io.sockets.on('connection', function(socket) {
-    socket.emit('current show', currentShow.toJSON());
+    emitShowTimes(socket);
     var voteId = getVoteId(socket.request);
     if (voteId)
         socket.emit('my vote', voteId);
 });
+
+var showTimeout = null;
+var nextShowTime = Date.now() + SHOW_INTERVAL;
+
+function nextShow() {
+    clearTimeout(showTimeout);
+    var skript, winnerSkript, maxVotes = 0;
+    for (var id in skripts) {
+        skript = skripts[id];
+        if  (skript.votes > maxVotes) {
+            winnerSkript = skript;
+            maxVotes = skript.votes;
+        }
+    }
+    if (winnerSkript) {
+        console.log("Starting scheduled show, winner is ", skript.title);
+        var theater = theaters.irc.getTheater();
+        // TODO pick channel
+        currentShow.startShow(theater, skript, function() {
+            scheduleShow();
+        });
+    } else {
+        console.log("No votes, no show.");
+        scheduleShow();
+    }
+}
+
+function scheduleShow() {
+    clearTimeout(showTimeout);
+    nextShowTime = new Date();
+    nextQuarterH = nextShowTime.getMinutes();
+    nextQuarterH -= (nextQuarterH % 15) - 15;
+    nextShowTime.setMinutes(nextQuarterH);
+    showTimeout = setTimeout(nextShow, Math.max(nextShowTime - Date.now(), 0));
+    console.log("Scheduled show for ", new Date(nextShowTime));
+    emitShowTimes(io.sockets);
+}
+
+scheduleShow();
+
+function emitShowTimes(socket) {
+    socket.emit('show times', {
+        'current': currentShow.toJSON(), 
+        'next': nextShowTime
+    });
+}
+
 
 if (args.length > 0){
     console.log("Running with", args[0]);

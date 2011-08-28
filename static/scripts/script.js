@@ -35,6 +35,11 @@ function highlightVote(id) {
     $('#skript-' + id).addClass('voted-for');
 }
 
+function handleShowTimes(data) {
+    handleCurrentShow(data.current);
+    handleNextShow(data.next);
+}
+
 function handleCurrentShow(data) {
     console.log("current show: " + data);
     var currentShow = JSON.parse(data);
@@ -48,6 +53,11 @@ function handleCurrentShow(data) {
     }
 }
 
+function handleNextShow(time) {
+    // TODO implement
+    console.log("Next show: ", new Date(time));
+}
+
 $(document).ready(function() {
     $.getJSON('/api/skripts', function(skripts) {
       console.log(skripts);
@@ -55,7 +65,7 @@ $(document).ready(function() {
     });
 
     document.socket = io.connect('/');
-    document.socket.on('current show', handleCurrentShow);
+    document.socket.on('show times', handleShowTimes);
     document.socket.on('votes', function(votes) {
         $.each(votes, function(id, vote) {
             renderVoteData(vote);
