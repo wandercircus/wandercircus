@@ -8,7 +8,7 @@ function renderVoteData(vote) {
         .removeClass('choose').addClass('fixed');
     } else {
         var channel = skript.find('span.channel');
-        if (vote.setup.irc.channel)
+        if (vote.setup.irc)
             channel.html(vote.setup.irc.channel);
         channel.removeClass('fixed').addClass('choose');
         var voteCasted = $('#skript-list').hasClass('vote-casted');
