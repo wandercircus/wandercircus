@@ -9,7 +9,7 @@ function renderVoteData(vote) {
         .removeClass('choose').addClass('fixed');
     } else {
         var channel = skript.find('span.channel');
-        if (vote.setup.irc)
+        if (vote.setup)
             channel.html(vote.setup.irc.channel);
         channel.removeClass('fixed').addClass('choose');
     };
