@@ -69,7 +69,8 @@ function handleCurrentShow(currentShow) {
         .removeClass('stopped').addClass('running')
         .find('.current-show')
         .find('.name').html(currentShow.skript.title).end()
-        .find('.channel').text(currentShow.skript.channel).end();
+        .find('span.channel').text(currentShow.skript.channel).end()
+        .find('a.channel').attr('href', 'irc://chat.freenode.net/' + currentShow.skript.channel);
     } else {
       $('#show').removeClass('running').addClass('stopped');
     }
