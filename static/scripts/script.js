@@ -122,7 +122,6 @@ $(document).ready(function() {
         var hasVoted = id != null;
         if (!hasVoted) {
             $('span.channel').click(function() {
-               console.log('changing channel of vote', $(this))
                var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
                $(this).replaceWith(input);
                input.focus();
