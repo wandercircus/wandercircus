@@ -155,7 +155,6 @@ function nextShow() {
     if (winnerSkript) {
         console.log("Starting scheduled show, winner is ", winnerSkript.title);
         var theater = theaters.irc.getTheater();
-        // TODO pick channel
         currentShow.startShow(theater, winnerSkript, function() {
             resetVotes();
             scheduleShow(15);
@@ -190,7 +189,7 @@ scheduleShow();
 
 function emitShowTimes(socket) {
     socket.emit('show times', {
-        'current': currentShow.export(), 
+        'current': currentShow.export(),
         'next': nextShowTime
     });
 }
