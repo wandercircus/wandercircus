@@ -5,6 +5,10 @@
 
 	<title>Wanderzirkus</title>
 	<link rel="stylesheet" href="/css/style.css">
+  <style type="text/css"> 
+    @import "css/jquery.countdown.css";
+    .countdown { width: 240px; height: 45px; }
+  </style>
 </head>
 <body>
 
@@ -26,6 +30,12 @@
       <div class="no-show">
         <p>No Show</p>
       </div>
+    </div>
+    
+    <h2>Next Show</h2>
+    <div id="next-show">
+      <span class="time"></span>
+      <div class="countdown"></div>
     </div>
   </div>
 	<footer>
@@ -49,6 +59,7 @@
 </div>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery.countdown.min.js"></script>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="/scripts/script.js"></script>
 <script>

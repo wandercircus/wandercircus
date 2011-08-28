@@ -55,7 +55,11 @@ function handleCurrentShow(data) {
 
 function handleNextShow(time) {
     // TODO implement
-    console.log("Next show: ", new Date(time));
+    time = new Date(time);
+    console.log("Next show: ", time);
+    $('#next-show').
+        find('.time').html(time.toLocaleString()).end().
+        find('.countdown').countdown({'until': time});
 }
 
 $(document).ready(function() {
