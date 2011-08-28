@@ -84,6 +84,7 @@ $(document).ready(function() {
         });
     });
     document.socket.on('my vote', function(id) {
+        console.log('my vote is ', id);
         highlightVote(id);
     });
 });

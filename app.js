@@ -16,7 +16,8 @@ var config      = require('./config.js'),
     currentShow = require('./lib/show.js'),
     skripts     = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
     votes       = {},
-    SHOW_INTERVAL = config.showInterval;
+    SHOW_INTERVAL = config.showInterval,
+    sessionStore = new express.session.MemoryStore();
 
 var args = process.argv.slice(2);
 
@@ -25,6 +26,8 @@ var theaters = {
 };
 
 app.configure(function(){
+    app.use(express.cookieParser());
+    app.use(express.session({ store: sessionStore, secret: config.sessionSecret }));
     app.use(express.methodOverride());
     app.use(express.bodyParser());
     app.use(app.router);
@@ -56,8 +59,7 @@ app.post('/api/vote/:id', function(req, res) {
         res.send(404);
         return;
     }
-
-    var voteId = getVoteId(req);
+    var voteId = req.session.voteId;
     if (process.env.NODE_ENV === 'production' && voteId) {
         res.send(403);
         return;
@@ -71,15 +73,20 @@ app.post('/api/vote/:id', function(req, res) {
     utils.calculateVotePercentage(skripts);
     io.sockets.emit('votes', utils.stripForVotes(skripts));
 
-    res.cookie('vote_id', req.params.id, { });
+    req.session.voteId = req.params.id;
 
     res.send(200);
 });
 
-function getVoteId(request) {
+function getVoteId(request, cb) {
     var cookieString = (request && request.headers.cookie) || "";
     var parsedCookies = connect.utils.parseCookie(cookieString);
-    return parsedCookies['vote_id'];
+    var sid = parsedCookies['connect.sid'];
+    if (sid) {
+      sessionStore.get(sid, function (error, session) {
+        cb(session.voteId);
+      });
+    }
 }
 
 app.get('/', function(req, res) {
@@ -90,9 +97,9 @@ app.listen(config.port, config.host);
 
 io.sockets.on('connection', function(socket) {
     emitShowTimes(socket);
-    var voteId = getVoteId(socket.request);
-    if (voteId)
-        socket.emit('my vote', voteId);
+    getVoteId(socket.handshake, function(voteId) {
+        if (voteId) socket.emit('my vote', voteId);
+    });
 });
 
 var showTimeout = null;
