@@ -146,7 +146,7 @@ function getNextShowTitle() {
         }
         skript = null;
     }
-    return winnerSkript;
+    return utils.massageSkript(winnerSkript);
 }
 
 function nextShow() {
