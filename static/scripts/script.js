@@ -94,6 +94,7 @@ var openLightBox = function(openId){
     });
     $('#lightbox-background').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
     var closeLightBox = function(){
+        location.hash = "";
         $("body").css({"overflow": "auto"});
         $('#lightbox-background, .lightbox').fadeOut();
     };
@@ -106,6 +107,9 @@ $(document).ready(function() {
     $(".open-lightbox").click(function(e){
         openLightBox($(this).attr("href"));
     });
+    if (location.hash.length > 1){
+        openLightBox(location.hash);
+    }
     $.getJSON('/api/skripts', function(skripts) {
       loadSkripts(skripts);
     });
