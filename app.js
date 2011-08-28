@@ -40,7 +40,7 @@ app.get('/api/theatres', function(req, res) {
 });
 
 app.get('/api/skripts', function(req, res) {
-  res.send(JSON.stringify(skripts));
+  res.send(JSON.stringify(utils.stripSkripts(skripts)));
 });
 
 app.post('/api/vote/:id', function(req, res) {
