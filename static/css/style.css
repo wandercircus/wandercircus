@@ -336,6 +336,10 @@ ul {
   padding-left: 10px;
 }
 
+.next-show-title, .next-show-author {
+  font-weight: bold;
+}
+
 footer {
   text-align: center;
   color: #402020;
