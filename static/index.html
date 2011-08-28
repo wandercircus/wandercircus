@@ -38,8 +38,8 @@
     <div id="robocolown"></div>
     
     <h2>Available Plays</h2>
-	  <ul id="skript-list" class="vote-casted">
-	  </ul>
+	  <table id="skript-list" class="vote-casted">
+	  </table>
 
     <div id="about" class="lightbox">
       <h1>About</h1>
@@ -76,27 +76,33 @@
 </div> <!--! end of #container -->
 
 <div id="templates" class="template-container">
-  <li class="skript">
-    <p>
-      <span class="show-info">
-        <span class="title"></span>
-        by
-        <span class="author"></span>
-        in
-        <span class="channel"></span>
+  <table>
+    <tr class="skript">
+      <td class="show-info">
+          <span class="title"></span>
+          by
+          <span class="author"></span>
+          in
+          <span class="channel"></span>
+      </td>
+      <td>
         <a class="vote">Vote!</a>
-      </span>
-      <span class="votes">
-        <span class="vote-info-text">
-          <span class="vote-number"></span>
-          <span>Votes</span>
+      </td>
+      <td>
+        <span class="votes">
+          <span class="vote-info-text">
+            <span class="vote-number"></span>
+            <span>Votes</span>
+          </span>
         </span>
-        <span class="vote-bar-container">
-          <span class="vote-bar"></div>
-        </span>
-      </span>
-    </p>
-  </li>
+      </td>
+      <td>
+        <div class="vote-bar-container">
+          <div class="vote-bar"></div>
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>
 
 <div id="lightbox-background"></div>

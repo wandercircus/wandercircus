@@ -230,8 +230,8 @@ li {
   width: 100px;
 }
 
-.skript p {
-  margin: 10px;
+.skript td {
+  padding: 0px 10px 5px;
 }
 
 .skript a {
@@ -260,21 +260,16 @@ ul.vote-casted a {
 }
 
 .votes {
-  position: absolute;
-  left: 450px;
 }
 
 .vote-info-text {
   text-align: right;
-  width: 76px;
-  position: absolute;
 }
 
 .vote-bar-container {
   height: 20px;
   width: 400px;
   background: white;
-  position: absolute;
   left: 85px;
 }
 
