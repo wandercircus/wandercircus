@@ -105,7 +105,7 @@ app.post('/api/vote/:id', function(req, res) {
 
 function emitVotes(socket) {
     socket.emit('votes', utils.stripForVotes(skripts));
-    socket.emit('next show', getNextShow());
+    socket.emit('next show', utils.massageSkript(getNextShow()));
 }
 
 function getVoteId(request, cb) {
@@ -146,7 +146,7 @@ function getNextShow() {
         }
         skript = null;
     }
-    return utils.massageSkript(winnerSkript);
+    return winnerSkript;
 }
 
 function nextShow() {
