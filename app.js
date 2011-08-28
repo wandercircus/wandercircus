@@ -87,14 +87,12 @@ io.sockets.on('connection', function(socket) {
 if (args.length > 0){
     console.log("Running with", args[0]);
     var theater = theaters.irc.getTheater();
-    var hamlet = skripts[args[0]];
-    var scene = parseInt(args[1] || 0, 10);
-    var runSkript = hamlet.skript;
-    if (scene !== undefined){
+    var play = skripts[args[0].replace('\.', '_')];
+    if (args[1]){
         console.log("Cut to", scene);
-        runSkript = hamlet.skript.slice(scene);
+        play.skript = play.skript.slice(parseInt( args[1] || 0, 10));
     }
-    theater.setup(hamlet.setup, function(){
-        theater.run(runSkript);
+    theater.setup(play.setup, function(){
+        theater.run(play.skript);
     });
 }
