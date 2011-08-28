@@ -348,6 +348,10 @@ footer .border {
   letter-spacing: 0.7em;
 }
 
+.border .no-space {
+  letter-spacing: 0;
+}
+
 footer li {
   display: inline;
   font-size: 40px;
