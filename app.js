@@ -121,6 +121,8 @@ function nextShow() {
         // TODO pick channel
         currentShow.startShow(theater, skript, function() {
             scheduleShow();
+        }, function doneClb() {
+            emitShowTimes(io.sockets);
         });
     } else {
         console.log("No votes, no show.");
