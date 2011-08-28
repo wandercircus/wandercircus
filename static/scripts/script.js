@@ -93,7 +93,7 @@ function handleNextShow(time) {
 var openLightBox = function(openId){
     var box = $(openId);
     if (openId == '#irc') {
-      var channel = $('.current-show .channel:first').text().slice(1);
+      var channel = $('#current-show .channel:first').text().slice(1);
       if (!box.hasClass('running') || (box.hasClass('running') && box.attr('channel') != channel)) {
         box.html('<iframe src="http://webchat.freenode.net?nick=onlooker-.&channels=' + channel + '&uio=MT1mYWxzZSY3PWZhbHNlJjk9dHJ1ZSYxMT0yMQ7f" width="647" height="400"></iframe>');
         box.addClass('running');
