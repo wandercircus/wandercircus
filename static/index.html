@@ -6,7 +6,6 @@
   <title>Wandercircus</title>
   <link rel="shortcut icon" href="/img/favicon.png" />
   <link rel="stylesheet" href="/css/style.css">
-  <link href='http://fonts.googleapis.com/css?family=Kranky' rel='stylesheet' type='text/css'>
   <style type="text/css"> 
     @import "css/jquery.countdown.css";
     .countdown { width: 240px; height: 45px; }
@@ -23,11 +22,9 @@
     <div id="show">
       <div id="current-show">
         <h2>A Show is running</h2>
-        <p>We are currently playing <span class="name"></span> in <a class="channel" href=""><span class="channel"></span></a></p>
-        <ul>
-          <li>If you are a nerd: Go to <a class="channel" href=""><span class="channel"></span></a> on Freenode (chat.freenode.net)</li>
-          <li>If you are not a nerd: <a href="#irc" class="open-lightbox">Click here</a></li>
-        </ul>
+        <p>We are currently performing <span class="current-show-title"></span> by <span class="current-show-author"></span>.</p>
+        <p>If you are a nerd: Go to <a class="channel" href=""><span class="channel"></span></a> on freenode</p>
+        <p>If you are not a nerd: <a href="#irc" class="open-lightbox">Click here</a></p>
       </div>
       <div id="next-show">
         <h2>Next Show in <span class="countdown"></span></h2>

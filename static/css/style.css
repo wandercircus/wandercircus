@@ -332,11 +332,15 @@ ul {
   vertical-align: top;;
 }
 
-#show p, #show li{
+#show p, #show li {
   padding-left: 10px;
 }
 
-.next-show-title, .next-show-author {
+#current-show p:first-of-type {
+  margin-bottom: 7px;
+}
+
+.current-show-title, .current-show-author, .next-show-title, .next-show-author {
   font-weight: bold;
 }
 
