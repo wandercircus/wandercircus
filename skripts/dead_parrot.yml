@@ -1,19 +1,21 @@
---- 
+---
 author: Monthy Python
 title: The Dead Parrot
-setup: 
-  actors: 
+setup:
+  actors:
   - id: MrPraline
     name: Mr. Praline
   - id: Owner
     name: Shop Owner
-  irc: 
+  irc:
     channel: "#petshop"
     prefix: mpdp|
     server: irc.freenode.org
-skript: 
+skript:
+- action: announcement
+  content: "[We are in a classical british pet shop. Goldfishes swim in their tanks, Golden Retrivers lick their own balld in their cages and a ton of cat food is stacked in one corner of the room. It's mid-day, the slow part.]"
 - action: enter
-  actors: 
+  actors:
   - Owner
   - MrPraline
 - action: speak

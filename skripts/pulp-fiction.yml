@@ -10,11 +10,11 @@ setup:
     channel: "#74chevy"
     prefix: pf|
     server: irc.freenode.org
-skript: 
+skript:
 - action: announcement
-  content: An old gas guzzling, dirty, white 1974 Chevy Nova barrels down a homeless-ridden street in Hollywood. In the front seat are two young fellas -- one white, one black -- both wearing cheap black suits with thin black ties under long green dusters. Their names are Vincent Vega (white) and Jules Winnfield (black). Jules is behind the wheel.
+  content: "[An old gas guzzling, dirty, white 1974 Chevy Nova barrels down a homeless-ridden street in Hollywood. In the front seat are two young fellas -- one white, one black -- both wearing cheap black suits with thin black ties under long green dusters. Their names are Vincent Vega (white) and Jules Winnfield (black). Jules is behind the wheel.]"
 - action: enter
-  actors: 
+  actors:
   - Jules
   - Vincent
 - action: speak
@@ -67,7 +67,7 @@ skript:
   line: Royale with Cheese.
 - action: speak
   actor: Jules
-  line: (repeating) Royale with Cheese. What'd they call a Big Mac?
+  line: Royale with Cheese. What'd they call a Big Mac?
 - action: speak
   actor: Vincent
   line: Big Mac's a Big Mac, but they call it Le Big Mac.
@@ -93,6 +93,6 @@ skript:
   actor: Jules
   line: Uuccch!
 - action: exit
-  actors: 
+  actors:
   - Jules
   - Vincent
