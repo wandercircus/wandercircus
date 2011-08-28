@@ -115,7 +115,10 @@ var openLightBox = function(openId){
         e.preventDefault();
         closeLightBox();
     });
-    $('.lightbox a.close').live('click', closeLightBox);
+    $('.lightbox a.close').live('click', function(e){
+        e.preventDefault();
+        closeLightBox();
+    });
     $("body").css({"overflow": "hidden"});
 };
 
