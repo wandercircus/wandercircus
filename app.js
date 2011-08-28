@@ -127,7 +127,7 @@ app.listen(config.port, config.host);
 io.sockets.on('connection', function(socket) {
     emitShowTimes(socket);
     getVoteId(socket.handshake, function(voteId) {
-        if (voteId) socket.emit('my vote', voteId);
+        socket.emit('my vote', voteId || null);
     });
 });
 
