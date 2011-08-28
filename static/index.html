@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Wanderzirkus</title>
+	<title>Wandercircus</title>
 	<link rel="stylesheet" href="/css/style.css">
   <style type="text/css"> 
     @import "css/jquery.countdown.css";
@@ -14,9 +14,10 @@
 
 <div id="container">
 	<header>
-    <h1>Wanderzirkus</h1>
+  <h1><span class="fix-kerning">W</span>ande<span class="fix-kerning2">r</span>ci<span class="fix-kerning2">r</span>cus</h1>
 	</header>
-	<div id="main" role="main">
+  <div id="main" role="main">
+    <div id="robocolown"></div>
 	  <h2>Available Plays</h2>
 	  <ul id="skript-list">
 	  </ul>
@@ -31,37 +32,42 @@
         <p>No Show</p>
       </div>
     </div>
-    
     <h2>Next Show</h2>
     <div id="next-show">
       <span class="time"></span>
       <div class="countdown"></div>
     </div>
+    <div id="about" class="lightbox"><h2>About</h2></div>
   </div>
-	<footer>
-
+  <footer>
+  <a href="#about" class="open-lightbox">About</a><br/>
+  <a href="http://www.flickr.com/photos/71842483@N00/593512292/">Pagliaccibot</a> by <a href="http://www.flickr.com/photos/joealterio/">JoeAlterio</a> (<a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" rel="license">CC-BY-NC-ND 2.0</a>)
 	</footer>
 </div> <!--! end of #container -->
 
 <div id="templates" class="template-container">
   <li class="skript">
-    <span class="title"></span>
-    <span class="author"></span>
-    <span class="channel">
-      <input />
-      <span></span>
-    </span>
-    <a class="vote">Vote Now</a>
-    <span class="votes">
-      <span class="vote-number"></span>
-      <span>Votes</span>
-    </span>
-    <div class="vote-bar-container">
-      <div class="vote-bar"></div>
-    </div>
+    <p>
+      <span class="show-info">
+        <span class="title"></span>
+        <span class="author"></span>
+        <span class="channel"></span>
+        <a class="vote">Vote Now</a>
+      </span>
+      <span class="votes">
+        <span class="vote-info-text">
+          <span class="vote-number"></span>
+          <span>Votes</span>
+        </span>
+        <span class="vote-bar-container">
+          <span class="vote-bar"></div>
+        </span>
+      </span>
+    </p>
   </li>
 </div>
 
+<div id="lightbox-background"></div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="/scripts/jquery.countdown.min.js"></script>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
