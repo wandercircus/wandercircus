@@ -3,7 +3,7 @@
  "setup": {
   "irc": {
    "server": "irc.freenode.org",
-   "channel": "#nodespeare",
+   "channel": "#norwaycastlewall",
    "prefix": "hamlet|"
   },
   "actors": [

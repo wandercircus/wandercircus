@@ -75,7 +75,6 @@ function handleCurrentShow(currentShow) {
     }
 }
 
-
 function handleNextShow(time) {
     time = new Date(time);
     console.log("Next show: ", time);
