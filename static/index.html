@@ -32,15 +32,16 @@
         <p>No Show</p>
       </div>
     </div>
-    
     <h2>Next Show</h2>
     <div id="next-show">
       <span class="time"></span>
       <div class="countdown"></div>
     </div>
+    <div id="about" class="lightbox"><h2>About</h2></div>
   </div>
-	<footer>
-
+  <footer>
+  <a href="#about" class="open-lightbox">About</a><br/>
+  <a href="http://www.flickr.com/photos/71842483@N00/593512292/">Pagliaccibot</a> by <a href="http://www.flickr.com/photos/joealterio/">JoeAlterio</a> (<a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" rel="license">CC-BY-NC-ND 2.0</a>)
 	</footer>
 </div> <!--! end of #container -->
 
@@ -63,6 +64,7 @@
   </li>
 </div>
 
+<div id="lightbox-background"></div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="/scripts/jquery.countdown.min.js"></script>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
