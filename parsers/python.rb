@@ -115,7 +115,7 @@ end
 
 result = {
   :author => 'Monthy Python',
-  :title => 'The Dead Parot',
+  :title => 'The Dead Parrot',
   :setup => {
     :actors => actors,
     :irc => irc
