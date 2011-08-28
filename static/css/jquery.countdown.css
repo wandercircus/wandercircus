@@ -1,7 +1,8 @@
 /* jQuery Countdown styles 1.5.9. */
 .hasCountdown {
-	border: 1px solid #ccc;
-	background-color: #eee;
+  color: #402020;
+  font-family: 'JFRingmasterRegular' Georgia serif;
+  font-size: 36px;
 }
 .countdown_rtl {
 	direction: rtl;

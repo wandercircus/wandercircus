@@ -4,13 +4,22 @@ function renderVoteData(vote) {
     skript.find('.vote-bar').animate( { width: '' + (vote.votePercentage * 100) + '%'}, 300);
     if (vote.channel) {
       skript
-        .find('span.channel')
-        .find('span').html('#' + vote.channel).end()
+        .find('span.channel').html(vote.channel)
         .removeClass('choose').addClass('fixed');
     } else {
-      skript
-        .find('span.channel')
-        .removeClass('fixed').addClass('choose');
+        var channel = skript.find('span.channel');
+        if (vote.setup.irc.channel)
+            channel.html(vote.setup.irc.channel);
+        channel.removeClass('fixed').addClass('choose');
+        var voteCasted = $('#skript-list').hasClass('vote-casted');
+        if (!voteCasted) {
+            channel.click(function() {
+               console.log('changing channel of vote', $(this))
+               var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
+               $(this).replaceWith(input);
+               input.focus();
+            });
+        }
     };
 }
 
@@ -35,7 +44,7 @@ function loadSkripts(skripts) {
 }
 
 function castVote(id) {
-    $.post('/api/vote/' + id, { channel: $('#skript-' + id + ' .channel input').val() }, function(res) {
+    $.post('/api/vote/' + id, { channel: $('#skript-' + id + ' input').val() }, function(res) {
         highlightVote(id);
     });
 }
@@ -75,7 +84,13 @@ function handleNextShow(time) {
     $('.next-show').
         find('.time').html(time.toLocaleString()).end().
         find('.countdown').removeClass('hasCountdown').html('').end().
-        find('.countdown').countdown({'until': time});
+        find('.countdown').countdown({
+            until: time,
+            layout: '<span class="clock-letter">{m10}</span>' +
+                     '<span class="clock-letter">{m1}</span>' + ':' +
+                     '<span class="clock-letter">{s10}</span>' +
+                     '<span class="clock-letter">{s1}</span>'
+        });
 }
 
 var openLightBox = function(openId){
