@@ -1,0 +1,208 @@
+author: William Shakespeare
+title: Romeo and Juliet Act I. Scene V.
+setup:
+  actors:
+  - id: Romeo
+    name: Romeo
+  - id: Juliet
+    name: Juliet
+  - id: Nurse
+    name: Nurse
+  irc:
+    channel: "#atthewindow"
+    prefix: "rj|"
+    server: irc.freenode.org
+skript:
+- action: enter
+  actors:
+  - Romeo
+  - Juliet
+- action: speak
+  actor: Juliet
+  line: Wilt thou be gone? It is not yet near day.
+- action: speak
+  actor: Juliet
+  line: It was the nightingale, and not the lark,
+- action: speak
+  actor: Juliet
+  line: That pierc'd the fearful hollow of thine ear.
+- action: speak
+  actor: Juliet
+  line: Nightly she sings on yond pomegranate tree.
+- action: speak
+  actor: Juliet
+  line: Believe me, love, it was the nightingale.
+- action: speak
+  actor: Romeo
+  line: It was the lark, the herald of the morn;
+- action: speak
+  actor: Romeo
+  line: No nightingale. Look, love, what envious streaks
+- action: speak
+  actor: Romeo
+  line: Do lace the severing clouds in yonder East.
+- action: speak
+  actor: Romeo
+  line: Night's candles are burnt out, and jocund day
+- action: speak
+  actor: Romeo
+  line: Stands tiptoe on the misty mountain tops.
+- action: speak
+  actor: Romeo
+  line: I must be gone and live, or stay and die.
+- action: speak
+  actor: Juliet
+  line: Yond light is not daylight; I know it, I.
+- action: speak
+  actor: Juliet
+  line: It is some meteor that the sun exhales
+- action: speak
+  actor: Juliet
+  line: To be to thee this night a torchbearer
+- action: speak
+  actor: Juliet
+  line: And light thee on the way to Mantua.
+- action: speak
+  actor: Juliet
+  line: Therefore stay yet; thou need'st not to be gone.
+- action: speak
+  actor: Romeo
+  line: Let me be ta'en, let me be put to death.
+- action: speak
+  actor: Romeo
+  line: I am content, so thou wilt have it so.
+- action: speak
+  actor: Romeo
+  line: I'll say yon grey is not the morning's eye,
+- action: speak
+  actor: Romeo
+  line: "'Tis but the pale reflex of Cynthia's brow;"
+- action: speak
+  actor: Romeo
+  line: Nor that is not the lark whose notes do beat
+- action: speak
+  actor: Romeo
+  line: The vaulty heaven so high above our heads.
+- action: speak
+  actor: Romeo
+  line: I have more care to stay than will to go.
+- action: speak
+  actor: Romeo
+  line: Come, death, and welcome! Juliet wills it so.
+- action: speak
+  actor: Romeo
+  line: How is't, my soul? Let's talk; it is not day.
+---
+- action: speak
+  actor: Juliet
+  line: It is, it is! Hie hence, be gone, away!
+- action: speak
+  actor: Juliet
+  line: It is the lark that sings so out of tune,
+- action: speak
+  actor: Juliet
+  line: Straining harsh discords and unpleasing sharps.
+- action: speak
+  actor: Juliet
+  line: Some say the lark makes sweet division;
+- action: speak
+  actor: Juliet
+  line: This doth not so, for she divideth us.
+- action: speak
+  actor: Juliet
+  line: Some say the lark and loathed toad chang'd eyes;
+- action: speak
+  actor: Juliet
+  line: O, now I would they had chang'd voices too,
+- action: speak
+  actor: Juliet
+  line: Since arm from arm that voice doth us affray,
+- action: speak
+  actor: Juliet
+  line: Hunting thee hence with hunt's-up to the day!
+- action: speak
+  actor: Juliet
+  line: O, now be gone! More light and light it grows.
+- action: speak
+  actor: Romeo
+  line: More light and light- more dark and dark our woes!
+---
+- action: enter
+  actors:
+  - Nurse
+- action: speak
+  actor: Nurse
+  line: Madam!
+- action: speak
+  actor: Juliet
+  line: Nurse?
+- action: speak
+  actor: Nurse
+  line: Your lady mother is coming to your chamber.
+- action: speak
+  actor: Nurse
+  line: The day is broke; be wary, look about.
+- action: speak
+  actor: Juliet
+  line: Then, window, let day in, and let life out.
+- action: exit
+  actors:
+  - Nurse
+- action: speak
+  actor: Romeo
+  line: Farewell, farewell! One kiss, and I'll descend.
+- action: speak
+  actor: Juliet
+  line: Art thou gone so, my lord, my love, my friend?
+- action: speak
+  actor: Juliet
+  line: I must hear from thee every day in the hour,
+- action: speak
+  actor: Juliet
+  line: For in a minute there are many days.
+- action: speak
+  actor: Juliet
+  line: O, by this count I shall be much in years
+- action: speak
+  actor: Juliet
+  line: Ere I again behold my Romeo!
+- action: speak
+  actor: Romeo
+  line: Farewell!
+- action: speak
+  actor: Romeo
+  line: I will omit no opportunity
+- action: speak
+  actor: Romeo
+  line: That may convey my greetings, love, to thee.
+- action: speak
+  actor: Juliet
+  line: O, think'st thou we shall ever meet again?
+- action: speak
+  actor: Romeo
+  line: I doubt it not; and all these woes shall serve
+- action: speak
+  actor: Romeo
+  line: For sweet discourses in our time to come.
+- action: speak
+  actor: Juliet
+  line: O God, I have an ill-divining soul!
+- action: speak
+  actor: Juliet
+  line: Methinks I see thee, now thou art below,
+- action: speak
+  actor: Juliet
+  line: As one dead in the bottom of a tomb.
+- action: speak
+  actor: Juliet
+  line: Either my eyesight fails, or thou look'st pale.
+- action: speak
+  actor: Romeo
+  line: And trust me, love, in my eye so do you.
+- action: speak
+  actor: Romeo
+  line: Dry sorrow drinks our blood. Adieu, adieu!
+- action: exit
+  actors:
+  - Romeo
+  - Juliet
