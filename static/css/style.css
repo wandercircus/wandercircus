@@ -485,3 +485,26 @@ header h1 .fix-kerning2 {
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
+
+#about.lightbox {
+    width: 600px;
+    height: 470;
+}
+
+#about.lightbox, p {
+    margin: 0px;
+}
+
+#about.lightbox, h1 {
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+#about.lightbox, h1.faq {
+    margin-top: 15px
+}
+
+#about.lightbox, h3 {
+    margin-bottom: 5px;
+}
+
