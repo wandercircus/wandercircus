@@ -14,7 +14,7 @@ io.enable('browser client etag');          // apply etag caching logic based on 
 var config      = require('./config.js'),
     utils       = require('./lib/utils.js'),
     currentShow = require('./lib/show.js'),
-    skripts     = require('./lib/skript.js').loadAllSkripts(config.skriptsPath);
+    skripts     = require('./lib/skript.js').loadAllSkripts(config.skriptsPath),
     votes       = {},
     SHOW_INTERVAL = config.showInterval,
     sessionStore = new express.session.MemoryStore();
@@ -53,7 +53,7 @@ app.get('/api/skripts', function(req, res) {
 });
 
 app.post('/api/vote/:id', function(req, res) {
-    skript = skripts[req.params.id]
+    skript = skripts[req.params.id];
 
     if (!skript) {
         res.send(404);
@@ -68,8 +68,8 @@ app.post('/api/vote/:id', function(req, res) {
     skript.votes += 1;
     // todo: test channel via regex
     if (!skript.channel && req.body && req.body.channel) {
-      skript.channel = req.body.channel
-    };
+      skript.channel = req.body.channel;
+    }
     utils.calculateVotePercentage(skripts);
     io.sockets.emit('votes', utils.stripForVotes(skripts));
 
@@ -152,9 +152,9 @@ function emitShowTimes(socket) {
 if (args.length > 0){
     console.log("Running with", args[0]);
     var theater = theaters.irc.getTheater();
-    var play = skripts[args[0].replace('\.', '_')];
+    var play = skripts[args[0].replace(/\./, '_')];
     if (args[1]){
-        console.log("Cut to", scene);
+        console.log("Cut to", args[1]);
         play.skript = play.skript.slice(parseInt( args[1] || 0, 10));
     }
     theater.setup(play.setup, function(){
