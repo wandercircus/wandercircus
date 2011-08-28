@@ -7,15 +7,19 @@ function renderVoteData(vote) {
         .find('span.channel').html(vote.channel)
         .removeClass('choose').addClass('fixed');
     } else {
-      skript
-        .find('span.channel').html(vote.setup.irc.channel)
-        .removeClass('fixed').addClass('choose')
-        .click(function() {
-           console.log('changing channel of vote', $(this))
-           var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
-           $(this).replaceWith(input);
-           input.focus();
-        });
+        var channel = skript.find('span.channel');
+        if (vote.setup.irc.channel)
+            channel.html(vote.setup.irc.channel);
+        channel.removeClass('fixed').addClass('choose');
+        var voteCasted = $('#skript-list').hasClass('vote-casted');
+        if (!voteCasted) {
+            channel.click(function() {
+               console.log('changing channel of vote', $(this))
+               var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
+               $(this).replaceWith(input);
+               input.focus();
+            });
+        }
     };
 }
 
