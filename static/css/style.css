@@ -639,3 +639,7 @@ header h1 .fix-kerning2 {
     margin-bottom: 5px;
 }
 
+#about.lightbox a {
+    color: #99454C;
+    text-decoration: none;
+}
