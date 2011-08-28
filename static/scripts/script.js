@@ -1,4 +1,5 @@
 function renderVoteData(vote) {
+    console.log('rendering vote', vote)
     var skript = $('#skript-' + vote.id);
     skript.find('.vote-number').html(vote.votes);
     skript.find('.vote-bar').animate( { width: '' + (vote.votePercentage * 100) + '%'}, 300);
@@ -11,15 +12,6 @@ function renderVoteData(vote) {
         if (vote.setup.irc)
             channel.html(vote.setup.irc.channel);
         channel.removeClass('fixed').addClass('choose');
-        var voteCasted = $('#skript-list').hasClass('vote-casted');
-        if (!voteCasted) {
-            channel.click(function() {
-               console.log('changing channel of vote', $(this))
-               var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
-               $(this).replaceWith(input);
-               input.focus();
-            });
-        }
     };
 }
 
@@ -127,5 +119,14 @@ $(document).ready(function() {
     });
     document.socket.on('my vote', function(id) {
         highlightVote(id);
+        var hasVoted = id != null;
+        if (!hasVoted) {
+            $('span.channel').click(function() {
+               console.log('changing channel of vote', $(this))
+               var input = $('<input />', {'type': 'text', 'name': 'channel', 'value': $(this).html()});
+               $(this).replaceWith(input);
+               input.focus();
+            });
+        }
     });
 });
