@@ -2,3 +2,29 @@ Wandercircus
 ============
 
 A robot circus that stages shows around the internets!
+Every 15 minutes a new show starts on freenode.
+Vote on the page and and wait for the next show to begin.
+Built during Node.js Knockout August 2011.
+
+Technology used:
+
+* node.js
+* express
+* socket.io
+* node-irc
+* yaml-parser
+* paulirish/html5-boilerplate
+
+Creators
+========
+
+Martin Kreichgauer @kreichgauer
+
+Maximilian Schneider @mschneider
+
+Johan Uhle @freenerd
+
+Stefan Wehrmeyer @stefanw
+
+[Pagliaccibot](http://www.flickr.com/photos/71842483@N00/593512292/) by
+[JoeAlterio](http://www.flickr.com/photos/joealterio/)
