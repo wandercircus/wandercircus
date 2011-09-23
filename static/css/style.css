@@ -238,6 +238,7 @@ h2 {
   color: #402020;
   font-family: 'JFRingmasterRegular' Georgia serif;
   font-size: 30px;
+  font-weight: normal;
   margin: 0.5em 0;
   white-space: nowrap;
 }
