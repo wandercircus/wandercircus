@@ -328,7 +328,7 @@ ul {
 #show {
   display: inline-block;
   width: 440px;
-  min-height: 310px;
+  min-height: 305px;
   font-size: 18px;
   vertical-align: top;;
 }
@@ -467,7 +467,7 @@ header h1 {
     font-size: 64pt;
     text-align: center;
     font-family: 'JFRingmasterRegular' Georgia serif;
-    margin: -3px 0;
+    margin: -8px 0 -11px;
 }
 
 header h1 .fix-kerning {
