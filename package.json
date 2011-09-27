@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nko2/noooooooooooode.git"
+    "url": "git@github.com:wandercircus/wandercircus.git"
   },
   "dependencies": {
     "express": "2.4.6",
